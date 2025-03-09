@@ -1,0 +1,27 @@
+{
+  "name": "canvas-portfolio",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexxGmZ/canvas-portfolio.git"
+  },
+  "keywords": [
+    "portfolio",
+    "canvas",
+    "fabric.js"
+  ],
+  "author": "alexxGmZ",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/alexxGmZ/canvas-portfolio/issues"
+  },
+  "homepage": "https://github.com/alexxGmZ/canvas-portfolio#readme",
+  "dependencies": {
+    "fabric": "^6.6.1"
+  }
+}
