@@ -5,7 +5,9 @@
   "main": "main.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "http-server ."
+    "start": "http-server . -c-1",
+    "tlwind": "npx @tailwindcss/cli -i ./css/input.css -o ./css/styles.css",
+    "tlwind-watch": "npx @tailwindcss/cli -i ./css/input.css -o ./css/styles.css --watch"
   },
   "repository": {
     "type": "git",
@@ -23,7 +25,9 @@
   },
   "homepage": "https://github.com/alexxGmZ/canvas-portfolio#readme",
   "dependencies": {
-    "fabric": "^6.6.1"
+    "@tailwindcss/cli": "^4.0.12",
+    "fabric": "^6.6.1",
+    "tailwindcss": "^4.0.12"
   },
   "devDependencies": {
     "http-server": "^14.1.1"
