@@ -2,12 +2,12 @@
   "name": "canvas-portfolio",
   "version": "0.0.0",
   "description": "",
-  "main": "main.js",
+  "main": "./js/main.js",
   "scripts": {
-    "dev": "http-server . -c-1",
-    "start": "http-server .",
     "tlwind": "npx @tailwindcss/cli -i ./css/input.css -o ./css/styles.css",
-    "tlwind-watch": "npx @tailwindcss/cli -i ./css/input.css -o ./css/styles.css --watch"
+    "tlwind-watch": "npx @tailwindcss/cli -i ./css/input.css -o ./css/styles.css --watch",
+    "serve": "vite serve",
+    "build": "vite build"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,6 @@
     "tailwindcss": "^4.0.12"
   },
   "devDependencies": {
-    "http-server": "^14.1.1"
+    "vite": "^6.2.1"
   }
 }
