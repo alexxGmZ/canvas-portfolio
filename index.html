@@ -9,8 +9,25 @@
 </head>
 
 <body>
-   <p class="text-2xl font-bold">Hello world</p>
+   <!-- toolbar -->
+   <div class="flex justify-center">
+      <div class="border rounded-md my-1 p-1 w-1/2 flex justify-center">
+         <button id="generateRectangle" title="Generate a rectangle" class="border rounded-lg p-2">
+            <img src="assets/svg/rectangle-tool-svgrepo-com.svg" alt="" width="20px">
+         </button>
+         <button id="generateCircle" title="Generate a circle" class="border rounded-lg p-2">
+            <img src="assets/svg/circle-tool-svgrepo-com.svg" alt="" width="20px">
+         </button>
+         <button id="generateLine" title="Generate a line" class="border rounded-lg p-2">
+            <img src="assets/svg/line-tool-svgrepo-com.svg" alt="" width="20px">
+         </button>
+         <button id="generateTextBox" title="Generate a textbox" class="border rounded-lg p-2">
+            <img src="assets/svg/text-tool-svgrepo-com.svg" alt="" width="20px">
+         </button>
+      </div>
+   </div>
 
+   <p class="text-xl font-bold font-serif">"I can be what you think I can be."</p>
    <div id="demo" class="underline"></div>
    <script src="./js/main.js"></script>
 </body>
