@@ -6,22 +6,22 @@ const canvas = new Canvas("canvas", {
    preserveObjectStacking: true,
 });
 
-const rectangleBtn = document.getElementById("generateRectangle")
+const rectangleBtn = document.getElementById("generateRectangle");
 rectangleBtn.addEventListener("click", () => {
    generateRectangle(canvas);
-})
+});
 
-const circleBtn = document.getElementById("generateCircle")
+const circleBtn = document.getElementById("generateCircle");
 circleBtn.addEventListener("click", () => {
    generateCircle(canvas);
-})
+});
 
-const lineBtn = document.getElementById("generateLine")
+const lineBtn = document.getElementById("generateLine");
 lineBtn.addEventListener("click", () => {
    generateLine(canvas);
-})
+});
 
-const textBoxBtn = document.getElementById("generateTextBox")
+const textBoxBtn = document.getElementById("generateTextBox");
 textBoxBtn.addEventListener("click", () => {
    generateTextBox(canvas);
-})
+});
