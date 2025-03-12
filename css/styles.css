@@ -181,6 +181,9 @@
   .top-3 {
     top: calc(var(--spacing) * 3);
   }
+  .z-40 {
+    z-index: 40;
+  }
   .mx-1 {
     margin-inline: calc(var(--spacing) * 1);
   }
