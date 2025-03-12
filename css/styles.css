@@ -7,9 +7,11 @@
     --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-yellow-300: oklch(0.905 0.182 98.111);
     --color-cyan-300: oklch(0.865 0.127 207.078);
     --color-gray-50: oklch(0.985 0.002 247.839);
     --color-gray-100: oklch(0.967 0.003 264.542);
+    --color-gray-200: oklch(0.928 0.006 264.531);
     --color-white: #fff;
     --spacing: 0.25rem;
     --text-xl: 1.25rem;
@@ -173,23 +175,8 @@
   }
 }
 @layer utilities {
-  .absolute {
-    position: absolute;
-  }
-  .fixed {
-    position: fixed;
-  }
   .sticky {
     position: sticky;
-  }
-  .inset-x-0 {
-    inset-inline: calc(var(--spacing) * 0);
-  }
-  .top-0 {
-    top: calc(var(--spacing) * 0);
-  }
-  .top-2 {
-    top: calc(var(--spacing) * 2);
   }
   .top-3 {
     top: calc(var(--spacing) * 3);
@@ -205,6 +192,15 @@
   }
   .my-5 {
     margin-block: calc(var(--spacing) * 5);
+  }
+  .ms-3 {
+    margin-inline-start: calc(var(--spacing) * 3);
+  }
+  .ms-4 {
+    margin-inline-start: calc(var(--spacing) * 4);
+  }
+  .me-1 {
+    margin-inline-end: calc(var(--spacing) * 1);
   }
   .flex {
     display: flex;
@@ -237,8 +233,17 @@
   .border-gray-100 {
     border-color: var(--color-gray-100);
   }
+  .border-yellow-300 {
+    border-color: var(--color-yellow-300);
+  }
   .bg-gray-50 {
     background-color: var(--color-gray-50);
+  }
+  .bg-gray-100 {
+    background-color: var(--color-gray-100);
+  }
+  .bg-gray-200 {
+    background-color: var(--color-gray-200);
   }
   .bg-white {
     background-color: var(--color-white);
@@ -270,6 +275,9 @@
   }
   .shadow-cyan-300 {
     --tw-shadow-color: var(--color-cyan-300);
+  }
+  .shadow-yellow-300 {
+    --tw-shadow-color: var(--color-yellow-300);
   }
   .hover\:shadow-md {
     &:hover {
