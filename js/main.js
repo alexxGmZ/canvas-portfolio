@@ -1,4 +1,9 @@
-import { initializeCanvas, canvasToJpeg, canvasToPng } from "./canvas.js"
+import {
+   initializeCanvas,
+   saveCanvasToJson,
+   canvasToJpeg,
+   canvasToPng,
+} from "./canvas.js"
 import {
    generateRectangle,
    generateCircle,
@@ -27,6 +32,11 @@ lineBtn.addEventListener("click", () => {
 const textBoxBtn = document.getElementById("generateTextBox");
 textBoxBtn.addEventListener("click", () => {
    generateTextBox(canvas);
+});
+
+const saveBtn = document.getElementById("saveCanvas");
+saveBtn.addEventListener("click", () => {
+   saveCanvasToJson(canvas);
 });
 
 const exportJpegBtn = document.getElementById("exportJPEG");
