@@ -93,14 +93,13 @@ export function generateTextBox(canvas) {
  */
 export function deleteObject(canvas) {
    if (!canvas) return;
-   console.log("deleteObject()");
    const selectedObjects = canvas.getActiveObjects();
-   if (selectedObjects.length > 0) {
-      selectedObjects.forEach(obj => {
-         canvas.remove(obj);
-         console.log(`Deleted object - ${obj.type}`);
-      });
-      canvas.discardActiveObject();
-      canvas.requestRenderAll();
-   }
+   if (selectedObjects.length == 0) return;
+   console.log("deleteObject()");
+   selectedObjects.forEach(obj => {
+      canvas.remove(obj);
+      console.log(`Deleted object - ${obj.type}`);
+   });
+   canvas.discardActiveObject();
+   canvas.requestRenderAll();
 }
