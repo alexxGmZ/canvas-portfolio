@@ -3,7 +3,8 @@ import { Rect, Circle, Line, IText } from "fabric"
 /**
  * Generates a rectangle on the specified Fabric.js canvas.
  *
- * @param {fabric.Canvas} canvas - The Fabric.js canvas instance where the rectangle will be added.
+ * @param {fabric.Canvas} canvas - The Fabric.js canvas instance where the
+ * rectangle will be added.
  */
 export function generateRectangle(canvas) {
    if (!canvas) return;
@@ -26,7 +27,8 @@ export function generateRectangle(canvas) {
 /**
  * Generates a circle on the specified Fabric.js canvas.
  *
- * @param {fabric.Canvas} canvas - The Fabric.js canvas instance where the circle will be added.
+ * @param {fabric.Canvas} canvas - The Fabric.js canvas instance where the
+ * circle will be added.
  */
 export function generateCircle(canvas) {
    if (!canvas) return;
@@ -48,7 +50,8 @@ export function generateCircle(canvas) {
 /**
  * Generates a line on the specified Fabric.js canvas.
  *
- * @param {fabric.Canvas} canvas - The Fabric.js canvas instance where the line will be added.
+ * @param {fabric.Canvas} canvas - The Fabric.js canvas instance where the line
+ * will be added.
  */
 export function generateLine(canvas) {
    if (!canvas) return;
@@ -65,7 +68,8 @@ export function generateLine(canvas) {
 /**
  * Generates a text object on the specified Fabric.js canvas.
  *
- * @param {fabric.Canvas} canvas - The Fabric.js canvas instance where the text will be added.
+ * @param {fabric.Canvas} canvas - The Fabric.js canvas instance where the text
+ * will be added.
  */
 export function generateTextBox(canvas) {
    if (!canvas) return;
