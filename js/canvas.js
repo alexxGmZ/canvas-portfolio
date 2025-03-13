@@ -1,3 +1,18 @@
+import { Canvas } from "fabric"
+
+/**
+ * Initialize Fabric.js canvas with initial properties.
+ * @return {fabric.Canvas} fabric.Canvas
+ */
+export function initializeCanvas() {
+   console.log("initializeCanvas()");
+   const canvas = new Canvas("canvas", {
+      fireRightClick: true,
+      preserveObjectStacking: true,
+   });
+   canvas.set("backgroundColor", "rgb(255, 255, 255)").requestRenderAll();
+   return canvas;
+}
 
 /**
  * Exports the current Fabric.js canvas to a JPEG format.

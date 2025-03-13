@@ -1,4 +1,4 @@
-import { Canvas } from "fabric"
+import { initializeCanvas, canvasToJpeg, canvasToPng } from "./canvas.js"
 import {
    generateRectangle,
    generateCircle,
@@ -6,13 +6,8 @@ import {
    generateTextBox,
    deleteObject,
 } from "./object.js"
-import { canvasToJpeg, canvasToPng } from "./canvas.js"
 
-const canvas = new Canvas("canvas", {
-   fireRightClick: true,
-   preserveObjectStacking: true,
-});
-canvas.set("backgroundColor", "rgb(255, 255, 255)").requestRenderAll();
+const canvas = initializeCanvas();
 
 const rectangleBtn = document.getElementById("generateRectangle");
 rectangleBtn.addEventListener("click", () => {
