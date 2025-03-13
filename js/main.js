@@ -1,5 +1,11 @@
 import { Canvas } from "fabric"
-import { generateRectangle, generateCircle, generateLine, generateTextBox } from "./object.js"
+import {
+   generateRectangle,
+   generateCircle,
+   generateLine,
+   generateTextBox,
+   deleteObject,
+} from "./object.js"
 import { canvasToJpeg, canvasToPng } from "./canvas.js"
 
 const canvas = new Canvas("canvas", {
@@ -36,4 +42,11 @@ exportJpegBtn.addEventListener("click", () => {
 const exportPngBtn = document.getElementById("exportPNG");
 exportPngBtn.addEventListener("click", () => {
    canvasToPng(canvas);
+})
+
+document.addEventListener("keydown", function(event){
+   if (event.key === "Delete") {
+      event.preventDefault();
+      deleteObject(canvas);
+   }
 })
