@@ -1,4 +1,5 @@
 import { Canvas } from "fabric"
+import portfolioJson from "../portfolio.json" assert { type: "json"};
 
 /**
  * Initialize Fabric.js canvas with initial properties.
@@ -10,7 +11,12 @@ export function initializeCanvas() {
       fireRightClick: true,
       preserveObjectStacking: true,
    });
-   canvas.set("backgroundColor", "rgb(255, 255, 255)").requestRenderAll();
+
+   if (!portfolioJson.background)
+      canvas.set("backgroundColor", "rgb(255, 255, 255)")
+
+   canvas.loadFromJSON(portfolioJson)
+   canvas.requestRenderAll();
    return canvas;
 }
 
