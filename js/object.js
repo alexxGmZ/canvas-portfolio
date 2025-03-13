@@ -85,11 +85,12 @@ export function generateTextBox(canvas) {
 }
 
 /**
- * Deletes the currently selected objects from the Fabric.js canvas. If no objects are
- * selected, the function exits early. After deletion, the canvas is re-rendered.
+ * Deletes the currently selected objects from the Fabric.js canvas. If no
+ * objects are selected, the function exits early. After deletion, the canvas is
+ * re-rendered.
  *
- * @param {fabric.Canvas} canvas - The Fabric.js canvas instance from which the selected
- * objects will be deleted.
+ * @param {fabric.Canvas} canvas - The Fabric.js canvas instance from which the
+ * selected objects will be deleted.
  */
 export function deleteObject(canvas) {
    if (!canvas) return;
