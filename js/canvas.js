@@ -10,6 +10,8 @@ export function initializeCanvas() {
    const canvas = new Canvas("canvas", {
       fireRightClick: true,
       preserveObjectStacking: true,
+      width: 720,
+      height: 1200
    });
 
    if (!portfolioJson.background)
