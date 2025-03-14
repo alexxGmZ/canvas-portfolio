@@ -42,16 +42,16 @@ saveBtn.addEventListener("click", () => {
 const exportJpegBtn = document.getElementById("exportJPEG");
 exportJpegBtn.addEventListener("click", () => {
    canvasToJpeg(canvas);
-})
+});
 
 const exportPngBtn = document.getElementById("exportPNG");
 exportPngBtn.addEventListener("click", () => {
    canvasToPng(canvas);
-})
+});
 
 document.addEventListener("keydown", function(event){
    if (event.key === "Delete") {
       event.preventDefault();
       deleteObject(canvas);
    }
-})
+});

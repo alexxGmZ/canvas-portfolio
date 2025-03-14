@@ -41,7 +41,7 @@ export function generateCircle(canvas) {
       stroke: "rgba(0, 0, 0, 1)",
       strokeWidth: 2,
       strokeUniform: true
-   })
+   });
 
    canvas.add(circle);
    canvas.setActiveObject(circle);
