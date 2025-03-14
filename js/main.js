@@ -9,6 +9,7 @@ import {
    generateCircle,
    generateLine,
    generateTextBox,
+   importImage,
    deleteObject,
    copyObjects,
    pasteObjects,
@@ -34,6 +35,11 @@ lineBtn.addEventListener("click", () => {
 const textBoxBtn = document.getElementById("generateTextBox");
 textBoxBtn.addEventListener("click", () => {
    generateTextBox(canvas);
+});
+
+const importImageBtn = document.getElementById("importImage");
+importImageBtn.addEventListener("click", () => {
+   importImage(canvas);
 });
 
 const saveBtn = document.getElementById("saveCanvas");

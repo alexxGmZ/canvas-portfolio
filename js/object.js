@@ -85,6 +85,45 @@ export function generateTextBox(canvas) {
    canvas.setActiveObject(text);
 }
 
+let importImageEventListener;
+/**
+ * Imports an image from the user's file system and adds it to the Fabric.js
+ * canvas.
+ *
+ * @param {fabric.Canvas} canvas - The Fabric.js canvas instance where the
+ * imported image will be added.
+ */
+export function importImage(canvas) {
+   if (!canvas) return;
+   console.log("importImage()");
+
+   const inputElement = document.getElementById("importImageInput");
+
+   if (importImageEventListener)
+      inputElement.removeEventListener("change", importImageEventListener);
+
+   importImageEventListener = function(event) {
+      console.log("importImage().uploadImageEventListener()");
+
+      const file = event.target.files[0];
+      const reader = new FileReader();
+
+      reader.onload = function(event) {
+         const imageURL = event.target.result;
+
+         fabric.Image.fromURL(imageURL, (img) => {
+            img.set({ left: 100, top: 100 });
+            canvas.add(img);
+            canvas.renderAll();
+         });
+      }
+      reader.readAsDataURL(file);
+   }
+
+   inputElement.click();
+   inputElement.addEventListener("change", importImageEventListener);
+}
+
 /**
  * Deletes the currently selected objects from the Fabric.js canvas. If no
  * objects are selected, the function exits early. After deletion, the canvas is
