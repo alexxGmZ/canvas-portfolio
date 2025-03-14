@@ -139,7 +139,7 @@ export async function pasteObjects(canvas) {
          evented: true,
       });
 
-      if (clonedObj.type === 'activeSelection') {
+      if (clonedObj.type === "activeSelection") {
          // active selection needs a reference to the canvas.
          clonedObj.canvas = canvas;
          clonedObj.forEachObject((obj) => {
