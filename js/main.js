@@ -10,6 +10,8 @@ import {
    generateLine,
    generateTextBox,
    deleteObject,
+   copyObjects,
+   pasteObjects,
 } from "./object.js"
 
 const canvas = initializeCanvas();
@@ -50,6 +52,19 @@ exportPngBtn.addEventListener("click", () => {
 });
 
 document.addEventListener("keydown", function(event){
+   if (event.ctrlKey) {
+      // ctrl + c
+      if (event.key.toLowerCase() === "c") {
+         event.preventDefault();
+         copyObjects(canvas);
+      }
+
+      // ctrl + v
+      if (event.key.toLowerCase() === "v") {
+         event.preventDefault();
+         pasteObjects(canvas);
+      }
+   }
    if (event.key === "Delete") {
       event.preventDefault();
       deleteObject(canvas);
