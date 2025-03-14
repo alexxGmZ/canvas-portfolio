@@ -1,4 +1,5 @@
 import { Rect, Circle, Line, IText } from "fabric"
+let _clipboard;
 
 /**
  * Generates a rectangle on the specified Fabric.js canvas.
@@ -41,7 +42,7 @@ export function generateCircle(canvas) {
       stroke: "rgba(0, 0, 0, 1)",
       strokeWidth: 2,
       strokeUniform: true
-   })
+   });
 
    canvas.add(circle);
    canvas.setActiveObject(circle);
@@ -102,5 +103,55 @@ export function deleteObject(canvas) {
       console.log(`Deleted object - ${obj.type}`);
    });
    canvas.discardActiveObject();
+   canvas.requestRenderAll();
+}
+
+/**
+ * Copies the currently selected objects on the Fabric.js canvas to the
+ * clipboard.
+ *
+ * @param {fabric.Canvas} canvas - The Fabric.js canvas instance from which
+ * objects are copied.
+ */
+export function copyObjects(canvas) {
+   if (!canvas) return;
+   console.log("copyObjects()");
+   canvas.getActiveObject().clone().then((cloned) => {
+      _clipboard = cloned;
+   });
+}
+
+/**
+ * Pastes the objects from the clipboard onto the Fabric.js canvas.
+ *
+ * @param {fabric.Canvas} canvas - The Fabric.js canvas instance where the
+ * objects will be pasted.
+ */
+export async function pasteObjects(canvas) {
+   if (!canvas) return;
+   console.log("pasteObjects()");
+
+   const clonedObj = await _clipboard.clone();
+   canvas.discardActiveObject();
+   clonedObj.set({
+      left: clonedObj.left + 10,
+      top: clonedObj.top + 10,
+      evented: true
+   });
+
+   if (clonedObj.type === "activeSelection") {
+      clonedObj.canvas = canvas;
+      clonedObj.forEachObject((object) => {
+         canvas.add(object);
+      });
+      clonedObj.setCoords();
+   }
+   else {
+      canvas.add(clonedObj);
+   }
+
+   _clipboard.top += 10;
+   _clipboard.left += 10;
+   canvas.setActiveObject(clonedObj);
    canvas.requestRenderAll();
 }
