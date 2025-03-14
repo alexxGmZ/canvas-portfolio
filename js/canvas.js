@@ -1,4 +1,4 @@
-import { Canvas } from "fabric"
+import { fabric } from "fabric"
 import portfolioJson from "../portfolio.json" assert { type: "json"};
 
 /**
@@ -7,7 +7,7 @@ import portfolioJson from "../portfolio.json" assert { type: "json"};
  */
 export function initializeCanvas() {
    console.log("initializeCanvas()");
-   const canvas = new Canvas("canvas", {
+   const canvas = new fabric.Canvas("canvas", {
       fireRightClick: true,
       preserveObjectStacking: true,
       width: 720,
