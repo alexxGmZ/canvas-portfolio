@@ -127,7 +127,7 @@ export function copyObjects(canvas) {
  * @param {fabric.Canvas} canvas - The Fabric.js canvas instance where the
  * objects will be pasted.
  */
-export async function pasteObjects(canvas) {
+export function pasteObjects(canvas) {
    if (!canvas) return;
    console.log("pasteObjects()");
 
