@@ -1,4 +1,5 @@
 import { fabric } from "fabric"
+import { pointerContextMenu } from "./context-menu.js"
 import portfolioJson from "../portfolio.json" assert { type: "json"};
 
 /**
@@ -19,6 +20,7 @@ export function initializeCanvas() {
 
    canvas.loadFromJSON(portfolioJson)
    canvas.requestRenderAll();
+   pointerContextMenu(canvas);
    return canvas;
 }
 

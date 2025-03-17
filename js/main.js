@@ -14,6 +14,7 @@ import {
    copyObjects,
    pasteObjects,
 } from "./object.js"
+import { hideContextMenu } from "./context-menu.js"
 
 const canvas = initializeCanvas();
 
@@ -55,6 +56,11 @@ exportJpegBtn.addEventListener("click", () => {
 const exportPngBtn = document.getElementById("exportPNG");
 exportPngBtn.addEventListener("click", () => {
    canvasToPng(canvas);
+});
+
+// hide context menu on click event buttons
+document.addEventListener("click", () => {
+   hideContextMenu();
 });
 
 document.addEventListener("keydown", function(event){
