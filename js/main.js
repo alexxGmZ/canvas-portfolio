@@ -70,6 +70,12 @@ document.addEventListener("keydown", function(event){
          event.preventDefault();
          pasteObjects(canvas);
       }
+
+      // ctrl + s
+      if (event.key.toLowerCase() === "s") {
+         event.preventDefault();
+         saveCanvasToJson(canvas);
+      }
    }
    if (event.key === "Delete") {
       event.preventDefault();
