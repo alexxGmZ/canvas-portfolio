@@ -24,6 +24,8 @@ export function initializeCanvas() {
 
 /**
  * Save canvas to JSON format
+ *
+ * @param {fabric.Canvas} canvas
  */
 export function saveCanvasToJson(canvas) {
    if (!canvas) return;
