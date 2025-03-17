@@ -53,15 +53,15 @@
       <ul class="m-0 p-1">
          <li class="flex p-1 hover:bg-gray-100 rounded-md">
             <img src="./assets/svg/copy-svgrepo-com.svg" width="15" class="me-2">
-            <button class="text-xs">Copy</button>
+            <button id="contextMenuCopyBtn" class="text-xs">Copy</button>
          </li>
          <li class="flex p-1 hover:bg-gray-100 rounded-md">
             <img src="./assets/svg/paste-svgrepo-com.svg" width="15" class="me-2">
-            <button class="text-xs">Paste</button>
+            <button id="contextMenuPasteBtn" class="text-xs">Paste</button>
          </li>
          <li class="flex p-1 hover:bg-red-300 rounded-md">
             <img src="./assets/svg/trash-alt-svgrepo-com.svg" width="15" class="me-2">
-            <button class="text-xs">Delete</button>
+            <button id="contextMenuDeleteBtn" class="text-xs">Delete</button>
          </li>
       </ul>
    </div>
@@ -73,6 +73,10 @@
    <!-- canvas body -->
    <div class="border border-gray-100 rounded-md shadow-sm w-fit h-fit mx-auto">
       <canvas id="canvas" class="overflow-x-clip"></canvas>
+   </div>
+   <div class="hidden">
+      <p id="pointerX"></p>
+      <p id="pointerY"></p>
    </div>
    <script type="module" src="./js/main.js"></script>
 </body>

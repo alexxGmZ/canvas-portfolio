@@ -4,13 +4,16 @@
  * @param {fabric.Canvas} canvas
  * @returns {Array<number>} x, y coordinates
  */
-function getPointerCoordinates(canvas) {
+export function getPointerCoordinates(canvas) {
    console.log("getPointerCoordinates()");
-   const pointer = canvas.getPointer();
-   let x = parseFloat(pointer.x.toFixed(3));;
-   let y = parseFloat(pointer.y.toFixed(3));;
+   canvas.on("mouse:move", (options) => {
+      const pointer = canvas.getPointer(options.e);
+      const pointerX = parseFloat(pointer.x.toFixed(3));
+      const pointerY = parseFloat(pointer.y.toFixed(3));
 
-   return [x, y];
+      document.getElementById("pointerX").textContent = pointerX;
+      document.getElementById("pointerY").textContent = pointerY;
+   });
 }
 
 /**
@@ -25,7 +28,7 @@ export function pointerContextMenu(canvas) {
 
    canvas.on("mouse:up", (event) => {
       // if the canvas or canvas objects are right clicked
-      if (event.button === 3) showContextMenu(canvas);
+      if (event.button === 3) showContextMenu();
    });
 
    canvas.on("mouse:down", () => {
@@ -38,12 +41,11 @@ export function pointerContextMenu(canvas) {
 /**
  * Displays the context menu at the current pointer location
  *
- * @param {fabric.Canvas} canvas - The Fabric.js canvas instance to use for
- * displaying the context menu
  */
-function showContextMenu(canvas) {
+function showContextMenu() {
    console.log("showContextMenu()");
-   const [pointerX, pointerY] = getPointerCoordinates(canvas);
+   const pointerX = parseFloat(document.getElementById("pointerX").textContent);
+   const pointerY = parseFloat(document.getElementById("pointerY").textContent);
    const browserZoomScale = Math.round(window.devicePixelRatio * 100) * 0.01;
 
    console.log(pointerX, pointerY, browserZoomScale);
@@ -51,8 +53,8 @@ function showContextMenu(canvas) {
    const ctxMenuElement = document.getElementById("contextMenu");
 
    ctxMenuElement.style.display = "block";
-   contextMenu.style.left = (pointerX + 60) + "px";
-   contextMenu.style.top = (pointerY + 70) + "px";
+   ctxMenuElement.style.left = (pointerX + 60 * browserZoomScale) + "px";
+   ctxMenuElement.style.top = (pointerY + 70 * browserZoomScale) + "px";
 }
 
 /**

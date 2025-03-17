@@ -165,18 +165,29 @@ export function copyObjects(canvas) {
  *
  * @param {fabric.Canvas} canvas - The Fabric.js canvas instance where the
  * objects will be pasted.
+ * @param {Array<number>} pointerCoords - x, y pointer coordinates.
  */
-export function pasteObjects(canvas) {
+export function pasteObjects(canvas, pointerCoords) {
    if (!canvas) return;
    console.log("pasteObjects()");
 
    _clipboard.clone(function(clonedObj) {
       canvas.discardActiveObject();
-      clonedObj.set({
-         left: clonedObj.left + 10,
-         top: clonedObj.top + 10,
-         evented: true,
-      });
+
+      if (pointerCoords) {
+         clonedObj.set({
+            left: parseFloat(pointerCoords[0]),
+            top: parseFloat(pointerCoords[1]),
+            evented: true,
+         });
+      }
+      else {
+         clonedObj.set({
+            left: clonedObj.left + 10,
+            top: clonedObj.top + 10,
+            evented: true,
+         });
+      }
 
       if (clonedObj.type === "activeSelection") {
          // active selection needs a reference to the canvas.

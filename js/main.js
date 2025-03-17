@@ -14,9 +14,10 @@ import {
    copyObjects,
    pasteObjects,
 } from "./object.js"
-import { hideContextMenu } from "./context-menu.js"
+import { getPointerCoordinates, hideContextMenu } from "./context-menu.js"
 
 const canvas = initializeCanvas();
+getPointerCoordinates(canvas);
 
 //
 // tool bar buttons
@@ -53,6 +54,23 @@ exportJpegBtn.addEventListener("click", () => {
 });
 exportPngBtn.addEventListener("click", () => {
    canvasToPng(canvas);
+});
+
+//
+// context menu buttons
+//
+const contextMenuCopyBtn = document.getElementById("contextMenuCopyBtn");
+const contextMenuPasteBtn = document.getElementById("contextMenuPasteBtn");
+const contextMenuDeleteBtn = document.getElementById("contextMenuDeleteBtn");
+
+contextMenuCopyBtn.addEventListener("click", () => {
+   copyObjects(canvas);
+});
+contextMenuPasteBtn.addEventListener("click", () => {
+   pasteObjects(canvas);
+});
+contextMenuDeleteBtn.addEventListener("click", () => {
+   deleteObject(canvas);
 });
 
 // hide context menu on click event buttons
