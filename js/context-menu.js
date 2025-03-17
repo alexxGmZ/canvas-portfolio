@@ -43,8 +43,7 @@ export function pointerContextMenu(canvas) {
  */
 function showContextMenu(canvas) {
    console.log("showContextMenu()");
-   const pointerX = getPointerCoordinates(canvas)[0];
-   const pointerY = getPointerCoordinates(canvas)[1];
+   const [pointerX, pointerY] = getPointerCoordinates(canvas);
    const browserZoomScale = Math.round(window.devicePixelRatio * 100) * 0.01;
 
    console.log(pointerX, pointerY, browserZoomScale);
