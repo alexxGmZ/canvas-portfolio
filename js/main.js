@@ -18,42 +18,39 @@ import { hideContextMenu } from "./context-menu.js"
 
 const canvas = initializeCanvas();
 
+//
+// tool bar buttons
+//
 const rectangleBtn = document.getElementById("generateRectangle");
+const circleBtn = document.getElementById("generateCircle");
+const lineBtn = document.getElementById("generateLine");
+const textBoxBtn = document.getElementById("generateTextBox");
+const importImageBtn = document.getElementById("importImage");
+const saveBtn = document.getElementById("saveCanvas");
+const exportJpegBtn = document.getElementById("exportJPEG");
+const exportPngBtn = document.getElementById("exportPNG");
+
 rectangleBtn.addEventListener("click", () => {
    generateRectangle(canvas);
 });
-
-const circleBtn = document.getElementById("generateCircle");
 circleBtn.addEventListener("click", () => {
    generateCircle(canvas);
 });
-
-const lineBtn = document.getElementById("generateLine");
 lineBtn.addEventListener("click", () => {
    generateLine(canvas);
 });
-
-const textBoxBtn = document.getElementById("generateTextBox");
 textBoxBtn.addEventListener("click", () => {
    generateTextBox(canvas);
 });
-
-const importImageBtn = document.getElementById("importImage");
 importImageBtn.addEventListener("click", () => {
    importImage(canvas);
 });
-
-const saveBtn = document.getElementById("saveCanvas");
 saveBtn.addEventListener("click", () => {
    saveCanvasToJson(canvas);
 });
-
-const exportJpegBtn = document.getElementById("exportJPEG");
 exportJpegBtn.addEventListener("click", () => {
    canvasToJpeg(canvas);
 });
-
-const exportPngBtn = document.getElementById("exportPNG");
 exportPngBtn.addEventListener("click", () => {
    canvasToPng(canvas);
 });
