@@ -48,10 +48,29 @@
       </button>
    </div>
 
+   <!-- context menu -->
+   <div id="contextMenu" class="absolute z-30 border border-gray-100 bg-white rounded-md shadow-md">
+      <ul class="m-0 p-1">
+         <li class="flex p-1 hover:bg-gray-100 rounded-md">
+            <img src="./assets/svg/copy-svgrepo-com.svg" width="15" class="me-2">
+            <button class="text-xs">Copy</button>
+         </li>
+         <li class="flex p-1 hover:bg-gray-100 rounded-md">
+            <img src="./assets/svg/paste-svgrepo-com.svg" width="15" class="me-2">
+            <button class="text-xs">Paste</button>
+         </li>
+         <li class="flex p-1 hover:bg-red-300 rounded-md">
+            <img src="./assets/svg/trash-alt-svgrepo-com.svg" width="15" class="me-2">
+            <button class="text-xs">Delete</button>
+         </li>
+      </ul>
+   </div>
+
    <p class="text-xl font-bold font-serif text-center my-5">
       "I can be who you think I can be."
    </p>
 
+   <!-- canvas body -->
    <div class="border border-gray-100 rounded-md shadow-sm w-fit h-fit mx-auto">
       <canvas id="canvas" class="overflow-x-clip"></canvas>
    </div>
