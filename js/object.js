@@ -168,16 +168,16 @@ export function copyObjects(canvas) {
  * @param {Array<number>} pointerCoords - x, y pointer coordinates.
  */
 export function pasteObjects(canvas, pointerCoords) {
-   if (!canvas) return;
-   console.log("pasteObjects()");
+   if (!canvas || !_clipboard) return;
+   console.log(`pasteObjects(${pointerCoords})`);
 
    _clipboard.clone(function(clonedObj) {
       canvas.discardActiveObject();
 
       if (pointerCoords) {
          clonedObj.set({
-            left: parseFloat(pointerCoords[0]),
-            top: parseFloat(pointerCoords[1]),
+            left: parseInt(pointerCoords[0]),
+            top: parseInt(pointerCoords[1]),
             evented: true,
          });
       }
