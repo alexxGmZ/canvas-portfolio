@@ -27,9 +27,8 @@ export function pointerContextMenu(canvas) {
 function showContextMenu() {
    console.log("showContextMenu()");
    const contextMenu = document.getElementById("contextMenu");
-   const pointerX = parseFloat(document.getElementById("pointerX").textContent);
-   const pointerY = parseFloat(document.getElementById("pointerY").textContent);
-   console.log(pointerX, pointerY);
+   const pointerX = parseFloat(document.getElementById("pageX").textContent);
+   const pointerY = parseFloat(document.getElementById("pageY").textContent);
 
    contextMenu.classList.remove("hidden");
    contextMenu.classList.add("block");

@@ -17,6 +17,14 @@ import {
 import { hideContextMenu } from "./context-menu.js"
 
 const canvas = initializeCanvas();
+canvas.on("mouse:up", (options) => {
+   const pointer = canvas.getPointer(options.e);
+   const canvasX = parseFloat(pointer.x.toFixed(3));
+   const canvasY = parseFloat(pointer.y.toFixed(3));
+
+   document.getElementById("canvasX").textContent = canvasX;
+   document.getElementById("canvasY").textContent = canvasY;
+});
 
 //
 // tool bar buttons
@@ -65,8 +73,10 @@ const contextMenuDeleteBtn = document.getElementById("contextMenuDeleteBtn");
 contextMenuCopyBtn.addEventListener("click", () => {
    copyObjects(canvas);
 });
-contextMenuPasteBtn.addEventListener("click", (event) => {
-   pasteObjects(canvas, [event.pageX, event.pageY]);
+contextMenuPasteBtn.addEventListener("click", () => {
+   const canvasX = document.getElementById("canvasX").textContent;
+   const canvasY = document.getElementById("canvasY").textContent;
+   pasteObjects(canvas, [canvasX, canvasY]);
 });
 contextMenuDeleteBtn.addEventListener("click", () => {
    deleteObject(canvas);
@@ -78,12 +88,11 @@ document.addEventListener("click", () => {
 });
 
 document.addEventListener("mousedown", (event) => {
-   console.log(event.clientX, event.clientY);
-   document.getElementById("pointerX").textContent = event.pageX;
-   document.getElementById("pointerY").textContent = event.pageY;
+   document.getElementById("pageX").textContent = event.pageX;
+   document.getElementById("pageY").textContent = event.pageY;
 });
 
-document.addEventListener("keydown", function(event){
+document.addEventListener("keydown", function(event) {
    if (event.ctrlKey) {
       // ctrl + c
       if (event.key.toLowerCase() === "c") {
