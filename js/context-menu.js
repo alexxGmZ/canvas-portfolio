@@ -1,21 +1,3 @@
-
-/**
- * Get the canvas pointer's x and y coordinates.
- * @param {fabric.Canvas} canvas
- * @returns {Array<number>} x, y coordinates
- */
-export function getPointerCoordinates(canvas) {
-   console.log("getPointerCoordinates()");
-   canvas.on("mouse:move", (options) => {
-      const pointer = canvas.getPointer(options.e);
-      const pointerX = parseFloat(pointer.x.toFixed(3));
-      const pointerY = parseFloat(pointer.y.toFixed(3));
-
-      document.getElementById("pointerX").textContent = pointerX;
-      document.getElementById("pointerY").textContent = pointerY;
-   });
-}
-
 /**
  * Toggles the context menu visibility on canvas mouse events.
  *
@@ -44,17 +26,14 @@ export function pointerContextMenu(canvas) {
  */
 function showContextMenu() {
    console.log("showContextMenu()");
+   const ctxMenuElement = document.getElementById("contextMenu");
    const pointerX = parseFloat(document.getElementById("pointerX").textContent);
    const pointerY = parseFloat(document.getElementById("pointerY").textContent);
-   const browserZoomScale = Math.round(window.devicePixelRatio * 100) * 0.01;
-
-   console.log(pointerX, pointerY, browserZoomScale);
-
-   const ctxMenuElement = document.getElementById("contextMenu");
+   console.log(pointerX, pointerY);
 
    ctxMenuElement.style.display = "block";
-   ctxMenuElement.style.left = (pointerX + 60 * browserZoomScale) + "px";
-   ctxMenuElement.style.top = (pointerY + 70 * browserZoomScale) + "px";
+   ctxMenuElement.style.left = (pointerX) + "px";
+   ctxMenuElement.style.top = (pointerY) + "px";
 }
 
 /**

@@ -14,10 +14,9 @@ import {
    copyObjects,
    pasteObjects,
 } from "./object.js"
-import { getPointerCoordinates, hideContextMenu } from "./context-menu.js"
+import { hideContextMenu } from "./context-menu.js"
 
 const canvas = initializeCanvas();
-getPointerCoordinates(canvas);
 
 //
 // tool bar buttons
@@ -66,8 +65,8 @@ const contextMenuDeleteBtn = document.getElementById("contextMenuDeleteBtn");
 contextMenuCopyBtn.addEventListener("click", () => {
    copyObjects(canvas);
 });
-contextMenuPasteBtn.addEventListener("click", () => {
-   pasteObjects(canvas);
+contextMenuPasteBtn.addEventListener("click", (event) => {
+   pasteObjects(canvas, [event.pageX, event.pageY]);
 });
 contextMenuDeleteBtn.addEventListener("click", () => {
    deleteObject(canvas);
@@ -76,6 +75,12 @@ contextMenuDeleteBtn.addEventListener("click", () => {
 // hide context menu on click event buttons
 document.addEventListener("click", () => {
    hideContextMenu();
+});
+
+document.addEventListener("mousedown", (event) => {
+   console.log(event.clientX, event.clientY);
+   document.getElementById("pointerX").textContent = event.pageX;
+   document.getElementById("pointerY").textContent = event.pageY;
 });
 
 document.addEventListener("keydown", function(event){
