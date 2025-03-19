@@ -41,7 +41,7 @@ function showContextMenu() {
  */
 export function hideContextMenu() {
    const contextMenu = document.getElementById("contextMenu");
-   if (contextMenu.style.display === "none") return;
+   if (contextMenu.classList.contains("hidden")) return;
 
    console.log("hideContextMenu()");
    contextMenu.classList.remove("block");
