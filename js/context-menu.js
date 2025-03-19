@@ -26,14 +26,15 @@ export function pointerContextMenu(canvas) {
  */
 function showContextMenu() {
    console.log("showContextMenu()");
-   const ctxMenuElement = document.getElementById("contextMenu");
+   const contextMenu = document.getElementById("contextMenu");
    const pointerX = parseFloat(document.getElementById("pointerX").textContent);
    const pointerY = parseFloat(document.getElementById("pointerY").textContent);
    console.log(pointerX, pointerY);
 
-   ctxMenuElement.style.display = "block";
-   ctxMenuElement.style.left = (pointerX) + "px";
-   ctxMenuElement.style.top = (pointerY) + "px";
+   contextMenu.classList.remove("hidden");
+   contextMenu.classList.add("block");
+   contextMenu.style.left = pointerX + "px";
+   contextMenu.style.top = pointerY + "px";
 }
 
 /**
@@ -44,5 +45,6 @@ export function hideContextMenu() {
    if (contextMenu.style.display === "none") return;
 
    console.log("hideContextMenu()");
-   contextMenu.style.display = "none";
+   contextMenu.classList.remove("block");
+   contextMenu.classList.add("hidden");
 }
