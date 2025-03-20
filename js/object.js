@@ -106,18 +106,23 @@ export function importImage(canvas) {
       console.log("importImage().uploadImageEventListener()");
 
       const file = event.target.files[0];
-      const reader = new FileReader();
+      const fileType = file.type;
+      const url = URL.createObjectURL(file);
 
-      reader.onload = function(event) {
-         const imageURL = event.target.result;
-
-         fabric.Image.fromURL(imageURL, (img) => {
-            img.set({ left: 100, top: 100 });
+      if (fileType === "image/png" || fileType === "image/jpeg") {
+         fabric.Image.fromURL(url, (img) => {
+            img.set({ left: 10, top: 10 });
             canvas.add(img);
-            canvas.renderAll();
          });
       }
-      reader.readAsDataURL(file);
+      else if (fileType === "image/svg+xml") {
+         fabric.loadSVGFromURL(url, (objects, options) => {
+            const svg = fabric.util.groupSVGElements(objects, options);
+            svg.scaleToWidth(180);
+            svg.scaleToHeight(180);
+            canvas.add(svg);
+         });
+      }
    }
 
    inputElement.click();
