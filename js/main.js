@@ -34,6 +34,7 @@ const circleBtn = document.getElementById("generateCircle");
 const lineBtn = document.getElementById("generateLine");
 const textBoxBtn = document.getElementById("generateTextBox");
 const importImageBtn = document.getElementById("importImage");
+const deleteObjectBtn = document.getElementById("deleteObject");
 const saveBtn = document.getElementById("saveCanvas");
 const exportJpegBtn = document.getElementById("exportJPEG");
 const exportPngBtn = document.getElementById("exportPNG");
@@ -52,6 +53,9 @@ textBoxBtn.addEventListener("click", () => {
 });
 importImageBtn.addEventListener("click", () => {
    importImage(canvas);
+});
+deleteObjectBtn.addEventListener("click", () => {
+   deleteObject(canvas);
 });
 saveBtn.addEventListener("click", () => {
    saveCanvasToJson(canvas);

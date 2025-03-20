@@ -9,7 +9,6 @@
       "Courier New", monospace;
     --color-red-200: oklch(0.885 0.062 18.334);
     --color-red-300: oklch(0.808 0.114 19.571);
-    --color-red-400: oklch(0.704 0.191 22.216);
     --color-yellow-300: oklch(0.905 0.182 98.111);
     --color-cyan-300: oklch(0.865 0.127 207.078);
     --color-gray-100: oklch(0.967 0.003 264.542);
@@ -220,6 +219,9 @@
   .me-2 {
     margin-inline-end: calc(var(--spacing) * 2);
   }
+  .block {
+    display: block;
+  }
   .flex {
     display: flex;
   }
@@ -254,11 +256,20 @@
   .border-gray-100 {
     border-color: var(--color-gray-100);
   }
+  .border-red-300 {
+    border-color: var(--color-red-300);
+  }
   .border-yellow-300 {
     border-color: var(--color-yellow-300);
   }
   .bg-gray-100 {
     background-color: var(--color-gray-100);
+  }
+  .bg-red-200 {
+    background-color: var(--color-red-200);
+  }
+  .bg-red-300 {
+    background-color: var(--color-red-300);
   }
   .bg-white {
     background-color: var(--color-white);
@@ -268,12 +279,6 @@
   }
   .p-2 {
     padding: calc(var(--spacing) * 2);
-  }
-  .px-1 {
-    padding-inline: calc(var(--spacing) * 1);
-  }
-  .px-2 {
-    padding-inline: calc(var(--spacing) * 2);
   }
   .text-center {
     text-align: center;
@@ -292,9 +297,6 @@
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
-  }
-  .text-red-200 {
-    color: var(--color-red-200);
   }
   .overline {
     text-decoration-line: overline;
@@ -321,23 +323,11 @@
   .shadow-cyan-300 {
     --tw-shadow-color: var(--color-cyan-300);
   }
+  .shadow-red-300 {
+    --tw-shadow-color: var(--color-red-300);
+  }
   .shadow-yellow-300 {
     --tw-shadow-color: var(--color-yellow-300);
-  }
-  .hover\:border {
-    &:hover {
-      @media (hover: hover) {
-        border-style: var(--tw-border-style);
-        border-width: 1px;
-      }
-    }
-  }
-  .hover\:border-gray-100 {
-    &:hover {
-      @media (hover: hover) {
-        border-color: var(--color-gray-100);
-      }
-    }
   }
   .hover\:bg-gray-100 {
     &:hover {
@@ -346,24 +336,10 @@
       }
     }
   }
-  .hover\:bg-red-200 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-red-200);
-      }
-    }
-  }
   .hover\:bg-red-300 {
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-red-300);
-      }
-    }
-  }
-  .hover\:bg-red-400 {
-    &:hover {
-      @media (hover: hover) {
-        background-color: var(--color-red-400);
       }
     }
   }
