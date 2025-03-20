@@ -13,6 +13,7 @@ import {
    deleteObject,
    copyObjects,
    pasteObjects,
+   adjustObjectLayer
 } from "./object.js"
 import { hideContextMenu } from "./context-menu.js"
 
@@ -73,6 +74,10 @@ exportPngBtn.addEventListener("click", () => {
 const contextMenuCopyBtn = document.getElementById("contextMenuCopyBtn");
 const contextMenuPasteBtn = document.getElementById("contextMenuPasteBtn");
 const contextMenuDeleteBtn = document.getElementById("contextMenuDeleteBtn");
+const contextMenuBringToFrontBtn = document.getElementById("contextMenuBringToFront");
+const contextMenuBringForwardBtn = document.getElementById("contextMenuBringForward");
+const contextMenuSendBackwardBtn = document.getElementById("contextMenuSendBackward");
+const contextMenuSendToBackBtn   = document.getElementById("contextMenuSendToBack");
 
 contextMenuCopyBtn.addEventListener("click", () => {
    copyObjects(canvas);
@@ -84,6 +89,18 @@ contextMenuPasteBtn.addEventListener("click", () => {
 });
 contextMenuDeleteBtn.addEventListener("click", () => {
    deleteObject(canvas);
+});
+contextMenuBringToFrontBtn.addEventListener("click", () => {
+   adjustObjectLayer(canvas, "bringToFront");
+});
+contextMenuBringForwardBtn.addEventListener("click", () => {
+   adjustObjectLayer(canvas, "bringForward");
+});
+contextMenuSendBackwardBtn.addEventListener("click", () => {
+   adjustObjectLayer(canvas, "sendBackward");
+});
+contextMenuSendToBackBtn.addEventListener("click", () => {
+   adjustObjectLayer(canvas, "sendToBack");
 });
 
 // hide context menu on click event buttons
