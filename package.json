@@ -25,7 +25,7 @@
   "bugs": {
     "url": "https://github.com/alexxGmZ/canvas-portfolio/issues"
   },
-  "homepage": "https://github.com/alexxGmZ/canvas-portfolio#readme",
+  "homepage": "https://alexxGmZ.github.io/canvas-portfolio/",
   "dependencies": {
     "@tailwindcss/cli": "^4.0.12",
     "fabric": "^5.3.0",
