@@ -222,9 +222,6 @@
   .me-2 {
     margin-inline-end: calc(var(--spacing) * 2);
   }
-  .mt-2 {
-    margin-top: calc(var(--spacing) * 2);
-  }
   .block {
     display: block;
   }
@@ -239,9 +236,6 @@
   }
   .w-fit {
     width: fit-content;
-  }
-  .rotate-90 {
-    rotate: 90deg;
   }
   .rotate-180 {
     rotate: 180deg;
