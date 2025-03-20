@@ -193,16 +193,12 @@ export function pasteObjects(canvas, pointerCoords) {
          // active selection needs a reference to the canvas.
          clonedObj.canvas = canvas;
          clonedObj.forEachObject((obj) => {
-            canvas.add(obj);
-            console.log(`Pasted object - Type: ${obj.type}`);
+            return canvas.add(obj);
          });
          // this should solve the unselectability
          clonedObj.setCoords();
       }
-      else {
-         canvas.add(clonedObj);
-         console.log(`Pasted object - Type: ${clonedObj.type}`);
-      }
+      else canvas.add(clonedObj);
 
       _clipboard.top += 10;
       _clipboard.left += 10;
