@@ -16,7 +16,7 @@ export function generateRectangle(canvas) {
       width: 50,
       height: 50,
       fill: "rgba(255, 255, 255, 0)",
-      stroke: "rgba(0, 0, 0, 1)",
+      stroke: "#0C0A09",
       strokeWidth: 2,
       strokeUniform: true
    });
@@ -39,7 +39,7 @@ export function generateCircle(canvas) {
       left: 100,
       top: 100,
       fill: "rgba(255, 255, 255, 0)",
-      stroke: "rgba(0, 0, 0, 1)",
+      stroke: "#0C0A09",
       strokeWidth: 2,
       strokeUniform: true
    });
@@ -58,7 +58,7 @@ export function generateLine(canvas) {
    if (!canvas) return;
    console.log(`generateLine()`);
    const line = new fabric.Line([10, 50, 100, 50], {
-      stroke: "rgba(0, 0, 0, 1)",        // Line color
+      stroke: "#0C0A09",        // Line color
       strokeWidth: 2,       // Line width
    });
 
