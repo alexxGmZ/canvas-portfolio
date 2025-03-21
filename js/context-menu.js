@@ -1,29 +1,8 @@
 /**
- * Toggles the context menu visibility on canvas mouse events.
- *
- * @param {fabric.Canvas} canvas - The Fabric.js canvas instance to monitor for
- * mouse events.
- */
-export function pointerContextMenu(canvas) {
-   if (!canvas) return;
-   console.log("pointerContextMenu()");
-
-   canvas.on("mouse:up", (event) => {
-      // if the canvas or canvas objects are right clicked
-      if (event.button === 3) showContextMenu();
-   });
-
-   canvas.on("mouse:down", () => {
-      // hide context menu when the mouse is pressed down
-      hideContextMenu();
-   });
-}
-
-/**
  * Displays the context menu at the current pointer location
  *
  */
-function showContextMenu() {
+export function showContextMenu() {
    console.log("showContextMenu()");
    const contextMenu = document.getElementById("contextMenu");
    const pointerX = parseFloat(document.getElementById("pageX").textContent);

@@ -15,16 +15,18 @@ import {
    pasteObjects,
    adjustObjectLayer
 } from "./object.js"
-import { hideContextMenu } from "./context-menu.js"
+import { showContextMenu, hideContextMenu } from "./context-menu.js"
 
 const canvas = initializeCanvas();
-canvas.on("mouse:up", (options) => {
-   const pointer = canvas.getPointer(options.e);
+canvas.on("mouse:up", (event) => {
+   const pointer = canvas.getPointer(event.e);
    const canvasX = parseFloat(pointer.x.toFixed(3));
    const canvasY = parseFloat(pointer.y.toFixed(3));
 
    document.getElementById("canvasX").textContent = canvasX;
    document.getElementById("canvasY").textContent = canvasY;
+
+   if (event.button === 3) showContextMenu();
 });
 
 //
