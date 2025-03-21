@@ -9,6 +9,7 @@
     "tlwind-watch": "npx @tailwindcss/cli -i ./css/input.css -o ./css/styles.css --watch",
     "serve": "vite serve",
     "build": "vite build",
+    "build-preview": "vite preview",
     "deploy": "gh-pages -d dist"
   },
   "repository": {
