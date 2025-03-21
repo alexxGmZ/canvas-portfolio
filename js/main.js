@@ -18,6 +18,13 @@ import {
 } from "./object.js"
 import { showContextMenu, hideContextMenu } from "./context-menu.js"
 
+var pageX = 0;
+var pageY = 0;
+document.addEventListener("mousedown", (event) => {
+   pageX = event.pageX;
+   pageY = event.pageY;
+});
+
 const canvas = initializeCanvas();
 canvas.on("mouse:up", (event) => {
    const pointer = canvas.getPointer(event.e);
@@ -27,7 +34,7 @@ canvas.on("mouse:up", (event) => {
    document.getElementById("canvasX").textContent = canvasX;
    document.getElementById("canvasY").textContent = canvasY;
 
-   if (event.button === 3) showContextMenu();
+   if (event.button === 3) showContextMenu([pageX, pageY]);
 });
 
 // hide context menu on click event buttons
@@ -35,11 +42,6 @@ document.addEventListener("click", (event) => {
    if (!colorPicker.contains(event.target)) {
       hideContextMenu();
    }
-});
-
-document.addEventListener("mousedown", (event) => {
-   document.getElementById("pageX").textContent = event.pageX;
-   document.getElementById("pageY").textContent = event.pageY;
 });
 
 document.addEventListener("keydown", function(event) {
