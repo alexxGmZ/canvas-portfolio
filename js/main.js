@@ -40,7 +40,7 @@ const saveBtn = document.getElementById("saveCanvas");
 const exportJpegBtn = document.getElementById("exportJPEG");
 const exportPngBtn = document.getElementById("exportPNG");
 
-rectangleBtn.addEventListener("click", () => {
+rectangleBtn.addEventListener("click", (event) => {
    generateRectangle(canvas);
 });
 circleBtn.addEventListener("click", () => {
@@ -77,7 +77,7 @@ const contextMenuDeleteBtn = document.getElementById("contextMenuDeleteBtn");
 const contextMenuBringToFrontBtn = document.getElementById("contextMenuBringToFront");
 const contextMenuBringForwardBtn = document.getElementById("contextMenuBringForward");
 const contextMenuSendBackwardBtn = document.getElementById("contextMenuSendBackward");
-const contextMenuSendToBackBtn   = document.getElementById("contextMenuSendToBack");
+const contextMenuSendToBackBtn = document.getElementById("contextMenuSendToBack");
 
 contextMenuCopyBtn.addEventListener("click", () => {
    copyObjects(canvas);
@@ -103,9 +103,21 @@ contextMenuSendToBackBtn.addEventListener("click", () => {
    adjustObjectLayer(canvas, "sendToBack");
 });
 
+//color picker
+const colorPicker = document.getElementById("colorPicker");
+colorPicker.addEventListener("click", (event) => {
+   if (event.target.tagName === "LI") {
+      const colorType = event.target.dataset.name;
+      const colorValue = event.target.dataset.value;
+      console.log(colorType, colorValue);
+   }
+});
+
 // hide context menu on click event buttons
-document.addEventListener("click", () => {
-   hideContextMenu();
+document.addEventListener("click", (event) => {
+   if (!colorPicker.contains(event.target)) {
+      hideContextMenu();
+   }
 });
 
 document.addEventListener("mousedown", (event) => {
