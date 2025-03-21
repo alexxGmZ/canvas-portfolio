@@ -26,6 +26,8 @@ canvas.on("mouse:up", (event) => {
 
    document.getElementById("canvasX").textContent = canvasX;
    document.getElementById("canvasY").textContent = canvasY;
+
+   if (event.button === 3) showContextMenu();
 });
 
 // hide context menu on click event buttons
@@ -38,8 +40,6 @@ document.addEventListener("click", (event) => {
 document.addEventListener("mousedown", (event) => {
    document.getElementById("pageX").textContent = event.pageX;
    document.getElementById("pageY").textContent = event.pageY;
-
-   if (event.buttons === 2) showContextMenu();
 });
 
 document.addEventListener("keydown", function(event) {
