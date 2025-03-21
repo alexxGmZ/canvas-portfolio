@@ -238,3 +238,21 @@ export function adjustObjectLayer(canvas, action) {
 
    canvas.requestRenderAll();
 }
+
+/**
+ * Change active object's fill or stroke color.
+ *
+ * @param {fabric.Canvas} canvas
+ * @param {String} colorType - "stroke" or "fill"
+ * @param {String} colorValue
+ */
+export function changeObjectColor(canvas, colorType, colorValue) {
+   if (!canvas) return;
+   console.log(`changeObjectColor(${colorType}, ${colorValue})`);
+
+   const activeObject = canvas.getActiveObjects();
+   activeObject.forEach((object) => {
+      object.set({ [colorType]: colorValue });
+   });
+   canvas.renderAll();
+}

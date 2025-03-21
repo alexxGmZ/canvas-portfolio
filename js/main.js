@@ -13,7 +13,8 @@ import {
    deleteObject,
    copyObjects,
    pasteObjects,
-   adjustObjectLayer
+   adjustObjectLayer,
+   changeObjectColor,
 } from "./object.js"
 import { showContextMenu, hideContextMenu } from "./context-menu.js"
 
@@ -111,7 +112,7 @@ colorPicker.addEventListener("click", (event) => {
    if (event.target.tagName === "LI") {
       const colorType = event.target.dataset.name;
       const colorValue = event.target.dataset.value;
-      console.log(colorType, colorValue);
+      changeObjectColor(canvas, colorType, colorValue);
    }
 });
 
