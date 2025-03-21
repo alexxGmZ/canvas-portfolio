@@ -83,7 +83,7 @@ const saveBtn = document.getElementById("saveCanvas");
 const exportJpegBtn = document.getElementById("exportJPEG");
 const exportPngBtn = document.getElementById("exportPNG");
 
-rectangleBtn.addEventListener("click", (event) => {
+rectangleBtn.addEventListener("click", () => {
    generateRectangle(canvas);
 });
 circleBtn.addEventListener("click", () => {
