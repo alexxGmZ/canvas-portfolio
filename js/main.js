@@ -36,10 +36,10 @@ document.addEventListener("click", (event) => {
 });
 
 document.addEventListener("mousedown", (event) => {
-   document.getElementById("pageX").textContent = event.pageX;
-   document.getElementById("pageY").textContent = event.pageY;
+   const pageX = event.pageX;
+   const pageY = event.pageY;
 
-   if (event.buttons === 2) showContextMenu();
+   if (event.buttons === 2) showContextMenu([pageX, pageY]);
 });
 
 document.addEventListener("keydown", function(event) {
