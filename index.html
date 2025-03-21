@@ -5,11 +5,11 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <title>Algilbert T. Gomez</title>
-  <script type="module" crossorigin src="/canvas-portfolio/assets/index-BeEmQFF3.js"></script>
-  <link rel="stylesheet" crossorigin href="/canvas-portfolio/assets/index-BS8eBiCa.css">
+  <script type="module" crossorigin src="/canvas-portfolio/assets/index-DgSz2I70.js"></script>
+  <link rel="stylesheet" crossorigin href="/canvas-portfolio/assets/index-vRLHhRp2.css">
 </head>
 
-<body class="p-2 bg-gray-100" oncontextmenu="return false;">
+<body class="p-2 bg-gray-100">
    <!-- toolbar -->
    <div
       class="sticky top-3 z-40 flex justify-center border border-gray-100 bg-white rounded-md shadow-md my-1 mx-auto p-2 w-fit">
@@ -88,14 +88,47 @@
             <button id="contextMenuSendToBack" class="text-xs">Send to back</button>
          </li>
       </ul>
+
+      <!-- color picker -->
+      <div id="colorPicker" class="my-1">
+         <ul id="colorPickerBorder" class="flex mb-1">
+            <li data-name="border" data-value="#0C0A09"
+               class="border border-stone-950 hover:shadow-md hover:shadow-stone-950 rounded-md mx-1 p-3">
+            <li data-name="border" data-value="#FECACA"
+               class="border border-red-200 hover:shadow-md hover:shadow-red-200 rounded-md mx-1 p-3">
+            <li data-name="border" data-value="#FEF08A"
+               class="border border-yellow-200 hover:shadow-md hover:shadow-yellow-200 rounded-md mx-1 p-3">
+            <li data-name="border" data-value="#BBF7D0"
+               class="border border-green-200 hover:shadow-md hover:shadow-green-200 rounded-md mx-1 p-3">
+            <li data-name="border" data-value="#BFDBFE"
+               class="border border-blue-200 hover:shadow-md hover:shadow-blue-200 rounded-md mx-1 p-3">
+            <li data-name="border" data-value="#E9D5FF"
+               class="border border-purple-200 hover:shadow-md hover:shadow-purple-200 rounded-md mx-1 p-3">
+         </ul>
+         <ul id="colorPickerBackground" class="flex mt-1">
+            <li data-name="background" data-value="#0C0A09"
+               class="border bg-stone-950 border-stone-950 hover:shadow-md hover:shadow-stone-950 rounded-md mx-1 p-3">
+            <li data-name="background" data-value="#FECACA"
+               class="border bg-red-200 border-red-200 hover:shadow-md hover:shadow-red-200 rounded-md mx-1 p-3">
+            <li data-name="background" data-value="#FEF08A"
+               class="border bg-yellow-200 border-yellow-200 hover:shadow-md hover:shadow-yellow-200 rounded-md mx-1 p-3">
+            <li data-name="background" data-value="#BBF7D0"
+               class="border bg-green-200 border-green-200 hover:shadow-md hover:shadow-green-200 rounded-md mx-1 p-3">
+            <li data-name="background" data-value="#BFDBFE"
+               class="border bg-blue-200 border-blue-200 hover:shadow-md hover:shadow-blue-200 rounded-md mx-1 p-3">
+            <li data-name="background" data-value="#E9D5FF"
+               class="border bg-purple-200 border-purple-200 hover:shadow-md hover:shadow-purple-200 rounded-md mx-1 p-3">
+         </ul>
+      </div>
    </div>
+
 
    <p class="text-xl font-bold font-serif text-center my-5">
       "I can be who you think I can be."
    </p>
 
    <!-- canvas body -->
-   <div class="border border-gray-100 rounded-md shadow-sm w-fit h-fit mx-auto">
+   <div class="border border-gray-100 rounded-md shadow-sm w-fit h-fit mx-auto" oncontextmenu="return false;">
       <canvas id="canvas" class="overflow-x-clip"></canvas>
    </div>
    <div class="hidden">
