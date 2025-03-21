@@ -7,6 +7,7 @@
     --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-red-100: oklch(0.936 0.032 17.717);
     --color-red-200: oklch(0.885 0.062 18.334);
     --color-red-300: oklch(0.808 0.114 19.571);
     --color-yellow-200: oklch(0.945 0.129 101.54);
@@ -200,8 +201,14 @@
   .z-40 {
     z-index: 40;
   }
-  .m-0 {
-    margin: calc(var(--spacing) * 0);
+  .m-1 {
+    margin: calc(var(--spacing) * 1);
+  }
+  .m-2 {
+    margin: calc(var(--spacing) * 2);
+  }
+  .m-3 {
+    margin: calc(var(--spacing) * 3);
   }
   .mx-1 {
     margin-inline: calc(var(--spacing) * 1);
@@ -242,11 +249,24 @@
   .hidden {
     display: none;
   }
+  .size-max {
+    width: max-content;
+    height: max-content;
+  }
   .h-fit {
     height: fit-content;
   }
+  .w-auto {
+    width: auto;
+  }
   .w-fit {
     width: fit-content;
+  }
+  .w-full {
+    width: 100%;
+  }
+  .w-max {
+    width: max-content;
   }
   .rotate-180 {
     rotate: 180deg;
@@ -308,6 +328,9 @@
   }
   .bg-purple-200 {
     background-color: var(--color-purple-200);
+  }
+  .bg-red-100 {
+    background-color: var(--color-red-100);
   }
   .bg-red-200 {
     background-color: var(--color-red-200);
@@ -383,6 +406,13 @@
     &:hover {
       @media (hover: hover) {
         background-color: var(--color-gray-100);
+      }
+    }
+  }
+  .hover\:bg-red-200 {
+    &:hover {
+      @media (hover: hover) {
+        background-color: var(--color-red-200);
       }
     }
   }
