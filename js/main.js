@@ -30,6 +30,44 @@ canvas.on("mouse:up", (event) => {
    if (event.button === 3) showContextMenu();
 });
 
+// hide context menu on click event buttons
+document.addEventListener("click", (event) => {
+   if (!colorPicker.contains(event.target)) {
+      hideContextMenu();
+   }
+});
+
+document.addEventListener("mousedown", (event) => {
+   document.getElementById("pageX").textContent = event.pageX;
+   document.getElementById("pageY").textContent = event.pageY;
+});
+
+document.addEventListener("keydown", function(event) {
+   if (event.ctrlKey) {
+      // ctrl + c
+      if (event.key.toLowerCase() === "c") {
+         event.preventDefault();
+         copyObjects(canvas);
+      }
+
+      // ctrl + v
+      if (event.key.toLowerCase() === "v") {
+         event.preventDefault();
+         pasteObjects(canvas);
+      }
+
+      // ctrl + s
+      if (event.key.toLowerCase() === "s") {
+         event.preventDefault();
+         saveCanvasToJson(canvas);
+      }
+   }
+   if (event.key === "Delete") {
+      event.preventDefault();
+      deleteObject(canvas);
+   }
+});
+
 //
 // tool bar buttons
 //
@@ -116,40 +154,3 @@ colorPicker.addEventListener("click", (event) => {
    }
 });
 
-// hide context menu on click event buttons
-document.addEventListener("click", (event) => {
-   if (!colorPicker.contains(event.target)) {
-      hideContextMenu();
-   }
-});
-
-document.addEventListener("mousedown", (event) => {
-   document.getElementById("pageX").textContent = event.pageX;
-   document.getElementById("pageY").textContent = event.pageY;
-});
-
-document.addEventListener("keydown", function(event) {
-   if (event.ctrlKey) {
-      // ctrl + c
-      if (event.key.toLowerCase() === "c") {
-         event.preventDefault();
-         copyObjects(canvas);
-      }
-
-      // ctrl + v
-      if (event.key.toLowerCase() === "v") {
-         event.preventDefault();
-         pasteObjects(canvas);
-      }
-
-      // ctrl + s
-      if (event.key.toLowerCase() === "s") {
-         event.preventDefault();
-         saveCanvasToJson(canvas);
-      }
-   }
-   if (event.key === "Delete") {
-      event.preventDefault();
-      deleteObject(canvas);
-   }
-});
