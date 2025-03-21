@@ -14,7 +14,6 @@ export function pointerContextMenu(canvas) {
    });
 
    canvas.on("mouse:down", () => {
-      console.log("canvas mouse:down event");
       // hide context menu when the mouse is pressed down
       hideContextMenu();
    });
