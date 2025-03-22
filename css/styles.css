@@ -17,6 +17,10 @@
     --color-blue-200: oklch(0.882 0.059 254.128);
     --color-purple-200: oklch(0.902 0.063 306.703);
     --color-gray-100: oklch(0.967 0.003 264.542);
+    --color-gray-200: oklch(0.928 0.006 264.531);
+    --color-gray-300: oklch(0.872 0.01 258.338);
+    --color-gray-400: oklch(0.707 0.022 261.325);
+    --color-stone-50: oklch(0.985 0.001 106.423);
     --color-stone-950: oklch(0.147 0.004 49.25);
     --color-white: #fff;
     --spacing: 0.25rem;
@@ -268,6 +272,10 @@
     border-style: var(--tw-border-style);
     border-width: 1px;
   }
+  .border-dashed {
+    --tw-border-style: dashed;
+    border-style: dashed;
+  }
   .border-blue-200 {
     border-color: var(--color-blue-200);
   }
@@ -276,6 +284,9 @@
   }
   .border-gray-100 {
     border-color: var(--color-gray-100);
+  }
+  .border-gray-400 {
+    border-color: var(--color-gray-400);
   }
   .border-green-200 {
     border-color: var(--color-green-200);
@@ -289,8 +300,14 @@
   .border-red-300 {
     border-color: var(--color-red-300);
   }
+  .border-stone-50 {
+    border-color: var(--color-stone-50);
+  }
   .border-stone-950 {
     border-color: var(--color-stone-950);
+  }
+  .border-white {
+    border-color: var(--color-white);
   }
   .border-yellow-200 {
     border-color: var(--color-yellow-200);
@@ -315,6 +332,9 @@
   }
   .bg-red-200 {
     background-color: var(--color-red-200);
+  }
+  .bg-stone-50 {
+    background-color: var(--color-stone-50);
   }
   .bg-stone-950 {
     background-color: var(--color-stone-950);
@@ -377,6 +397,9 @@
   .shadow-cyan-300 {
     --tw-shadow-color: var(--color-cyan-300);
   }
+  .shadow-gray-200 {
+    --tw-shadow-color: var(--color-gray-200);
+  }
   .shadow-red-300 {
     --tw-shadow-color: var(--color-red-300);
   }
@@ -409,6 +432,34 @@
     &:hover {
       @media (hover: hover) {
         --tw-shadow-color: var(--color-blue-200);
+      }
+    }
+  }
+  .hover\:shadow-gray-100 {
+    &:hover {
+      @media (hover: hover) {
+        --tw-shadow-color: var(--color-gray-100);
+      }
+    }
+  }
+  .hover\:shadow-gray-200 {
+    &:hover {
+      @media (hover: hover) {
+        --tw-shadow-color: var(--color-gray-200);
+      }
+    }
+  }
+  .hover\:shadow-gray-300 {
+    &:hover {
+      @media (hover: hover) {
+        --tw-shadow-color: var(--color-gray-300);
+      }
+    }
+  }
+  .hover\:shadow-gray-400 {
+    &:hover {
+      @media (hover: hover) {
+        --tw-shadow-color: var(--color-gray-400);
       }
     }
   }
