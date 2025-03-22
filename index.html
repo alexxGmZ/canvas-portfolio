@@ -5,8 +5,8 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1">
    <title>Algilbert T. Gomez</title>
-  <script type="module" crossorigin src="/canvas-portfolio/assets/index-CucJkAFU.js"></script>
-  <link rel="stylesheet" crossorigin href="/canvas-portfolio/assets/index-B5CcnH4u.css">
+  <script type="module" crossorigin src="/canvas-portfolio/assets/index-GMknTcww.js"></script>
+  <link rel="stylesheet" crossorigin href="/canvas-portfolio/assets/index-DLuPVwBf.css">
 </head>
 
 <body class="p-2 bg-gray-100">
@@ -68,55 +68,75 @@
          Delete
       </button>
 
-      <hr class="my-2 border border-gray-100">
+      <hr id="hr1" class="my-2 border border-gray-100">
 
-      <button id="contextMenuBringToFront" class="flex w-full hover:bg-gray-100 rounded-md text-xs p-1">
-         <img src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Generator:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20width='800px'%20height='800px'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M21%203H3M12%2021V7M12%207L5%2014M12%207L19%2014'%20stroke='%23000000'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" width="15" class="me-2">
-         Bring to front
-      </button>
-      <button id="contextMenuBringForward" class="flex w-full hover:bg-gray-100 rounded-md text-xs p-1">
-         <img src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Generator:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20width='800px'%20height='800px'%20viewBox='0%200%2016%2016'%20xmlns='http://www.w3.org/2000/svg'%20fill='none'%3e%3cpath%20fill='%23000000'%20d='M4.045%207.765a.75.75%200%2011-1.09-1.03l4.25-4.5a.75.75%200%20011.09%200l4.25%204.5a.75.75%200%2001-1.09%201.03L8.5%204.636v8.614a.75.75%200%2001-1.5%200V4.636L4.045%207.765z'/%3e%3c/svg%3e" width="15" class="me-2">
-         Bring forward
-      </button>
-      <button id="contextMenuSendBackward" class="flex w-full hover:bg-gray-100 rounded-md text-xs p-1">
-         <img src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Generator:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20width='800px'%20height='800px'%20viewBox='0%200%2016%2016'%20xmlns='http://www.w3.org/2000/svg'%20fill='none'%3e%3cpath%20fill='%23000000'%20d='M4.045%207.765a.75.75%200%2011-1.09-1.03l4.25-4.5a.75.75%200%20011.09%200l4.25%204.5a.75.75%200%2001-1.09%201.03L8.5%204.636v8.614a.75.75%200%2001-1.5%200V4.636L4.045%207.765z'/%3e%3c/svg%3e" width="15" class="rotate-180 me-2">
-         Send backward
-      </button>
-      <button id="contextMenuSendToBack" class="flex w-full hover:bg-gray-100 rounded-md text-xs p-1">
-         <img src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Generator:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20width='800px'%20height='800px'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M21%203H3M12%2021V7M12%207L5%2014M12%207L19%2014'%20stroke='%23000000'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" width="15" class="rotate-180 me-2">
-         Send to back
-      </button>
+      <div id="objectLayerControls">
+         <button id="contextMenuBringToFront" class="flex w-full hover:bg-gray-100 rounded-md text-xs p-1">
+            <img src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Generator:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20width='800px'%20height='800px'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M21%203H3M12%2021V7M12%207L5%2014M12%207L19%2014'%20stroke='%23000000'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" width="15" class="me-2">
+            Bring to front
+         </button>
+         <button id="contextMenuBringForward" class="flex w-full hover:bg-gray-100 rounded-md text-xs p-1">
+            <img src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Generator:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20width='800px'%20height='800px'%20viewBox='0%200%2016%2016'%20xmlns='http://www.w3.org/2000/svg'%20fill='none'%3e%3cpath%20fill='%23000000'%20d='M4.045%207.765a.75.75%200%2011-1.09-1.03l4.25-4.5a.75.75%200%20011.09%200l4.25%204.5a.75.75%200%2001-1.09%201.03L8.5%204.636v8.614a.75.75%200%2001-1.5%200V4.636L4.045%207.765z'/%3e%3c/svg%3e" width="15" class="me-2">
+            Bring forward
+         </button>
+         <button id="contextMenuSendBackward" class="flex w-full hover:bg-gray-100 rounded-md text-xs p-1">
+            <img src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Generator:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20width='800px'%20height='800px'%20viewBox='0%200%2016%2016'%20xmlns='http://www.w3.org/2000/svg'%20fill='none'%3e%3cpath%20fill='%23000000'%20d='M4.045%207.765a.75.75%200%2011-1.09-1.03l4.25-4.5a.75.75%200%20011.09%200l4.25%204.5a.75.75%200%2001-1.09%201.03L8.5%204.636v8.614a.75.75%200%2001-1.5%200V4.636L4.045%207.765z'/%3e%3c/svg%3e" width="15" class="rotate-180 me-2">
+            Send backward
+         </button>
+         <button id="contextMenuSendToBack" class="flex w-full hover:bg-gray-100 rounded-md text-xs p-1">
+            <img src="data:image/svg+xml,%3c?xml%20version='1.0'%20encoding='utf-8'?%3e%3c!--%20Uploaded%20to:%20SVG%20Repo,%20www.svgrepo.com,%20Generator:%20SVG%20Repo%20Mixer%20Tools%20--%3e%3csvg%20width='800px'%20height='800px'%20viewBox='0%200%2024%2024'%20fill='none'%20xmlns='http://www.w3.org/2000/svg'%3e%3cpath%20d='M21%203H3M12%2021V7M12%207L5%2014M12%207L19%2014'%20stroke='%23000000'%20stroke-width='2'%20stroke-linecap='round'%20stroke-linejoin='round'/%3e%3c/svg%3e" width="15" class="rotate-180 me-2">
+            Send to back
+         </button>
+      </div>
+
+      <hr id="hr2" class="my-2 border border-gray-100">
 
       <!-- color picker -->
       <div id="colorPicker" class="my-1">
-         <ul id="colorPickerStroke" class="flex mb-1">
-            <li data-name="stroke" data-value="#0C0A09" title="stroke #0C0A09"
-               class="border border-stone-950 hover:shadow-md hover:shadow-stone-950 rounded-md mx-1 p-3">
-            <li data-name="stroke" data-value="#FECACA" title="stroke #FECACA"
-               class="border border-red-200 hover:shadow-md hover:shadow-red-200 rounded-md mx-1 p-3">
-            <li data-name="stroke" data-value="#FEF08A" title="stroke #FEF08A"
-               class="border border-yellow-200 hover:shadow-md hover:shadow-yellow-200 rounded-md mx-1 p-3">
-            <li data-name="stroke" data-value="#BBF7D0" title="stroke #BBF7D0"
-               class="border border-green-200 hover:shadow-md hover:shadow-green-200 rounded-md mx-1 p-3">
-            <li data-name="stroke" data-value="#BFDBFE" title="stroke #BFDBFE"
-               class="border border-blue-200 hover:shadow-md hover:shadow-blue-200 rounded-md mx-1 p-3">
-            <li data-name="stroke" data-value="#E9D5FF" title="stroke #E9D5FF"
-               class="border border-purple-200 hover:shadow-md hover:shadow-purple-200 rounded-md mx-1 p-3">
-         </ul>
-         <ul id="colorPickerFill" class="flex mt-1">
-            <li data-name="fill" data-value="#0C0A09" title="fill #0C0A09"
-               class="border bg-stone-950 border-stone-950 hover:shadow-md hover:shadow-stone-950 rounded-md mx-1 p-3">
-            <li data-name="fill" data-value="#FECACA" title="fill #FECACA"
-               class="border bg-red-200 border-red-200 hover:shadow-md hover:shadow-red-200 rounded-md mx-1 p-3">
-            <li data-name="fill" data-value="#FEF08A" title="fill #FEF08A"
-               class="border bg-yellow-200 border-yellow-200 hover:shadow-md hover:shadow-yellow-200 rounded-md mx-1 p-3">
-            <li data-name="fill" data-value="#BBF7D0" title="fill #BBF7D0"
-               class="border bg-green-200 border-green-200 hover:shadow-md hover:shadow-green-200 rounded-md mx-1 p-3">
-            <li data-name="fill" data-value="#BFDBFE" title="fill #BFDBFE"
-               class="border bg-blue-200 border-blue-200 hover:shadow-md hover:shadow-blue-200 rounded-md mx-1 p-3">
-            <li data-name="fill" data-value="#E9D5FF" title="fill #E9D5FF"
-               class="border bg-purple-200 border-purple-200 hover:shadow-md hover:shadow-purple-200 rounded-md mx-1 p-3">
-         </ul>
+         <div id="colorPickerStroke">
+            <ul class="flex mb-1">
+               <li data-name="stroke" data-value="#FFF" title="stroke #FFF"
+                  class="border border-white shadow-md shadow-gray-200 hover:shadow-md hover:shadow-gray-400 rounded-md mx-1 p-3">
+               <li data-name="stroke" data-value="#0C0A09" title="stroke #0C0A09"
+                  class="border border-stone-950 hover:shadow-md hover:shadow-stone-950 rounded-md mx-1 p-3">
+               <li data-name="stroke" data-value="#FECACA" title="stroke #FECACA"
+                  class="border border-red-200 hover:shadow-md hover:shadow-red-200 rounded-md mx-1 p-3">
+               <li data-name="stroke" data-value="#FEF08A" title="stroke #FEF08A"
+                  class="border border-yellow-200 hover:shadow-md hover:shadow-yellow-200 rounded-md mx-1 p-3">
+            </ul>
+            <ul class="flex mb-2">
+               <li data-name="stroke" data-value="#BBF7D0" title="stroke #BBF7D0"
+                  class="border border-green-200 hover:shadow-md hover:shadow-green-200 rounded-md mx-1 p-3">
+               <li data-name="stroke" data-value="#BFDBFE" title="stroke #BFDBFE"
+                  class="border border-blue-200 hover:shadow-md hover:shadow-blue-200 rounded-md mx-1 p-3">
+               <li data-name="stroke" data-value="#E9D5FF" title="stroke #E9D5FF"
+                  class="border border-purple-200 hover:shadow-md hover:shadow-purple-200 rounded-md mx-1 p-3">
+               <li data-name="stroke" data-value="rgba(0, 0, 0, 0)" title="stroke transparent"
+                  class="border border-dashed border-gray-400 hover:shadow-md hover:shadow-gray-400 rounded-md mx-1 p-3">
+            </ul>
+         </div>
+         <div id="colorPickerFill">
+            <ul class="flex mt-2">
+               <li data-name="fill" data-value="#FFF" title="fill #FFF"
+                  class="border bg-white border-white shadow-md shadow-gray-200 hover:shadow-md hover:shadow-gray-400 rounded-md mx-1 p-3">
+               <li data-name="fill" data-value="#0C0A09" title="fill #0C0A09"
+                  class="border bg-stone-950 border-stone-950 hover:shadow-md hover:shadow-stone-950 rounded-md mx-1 p-3">
+               <li data-name="fill" data-value="#FECACA" title="fill #FECACA"
+                  class="border bg-red-200 border-red-200 hover:shadow-md hover:shadow-red-200 rounded-md mx-1 p-3">
+               <li data-name="fill" data-value="#FEF08A" title="fill #FEF08A"
+                  class="border bg-yellow-200 border-yellow-200 hover:shadow-md hover:shadow-yellow-200 rounded-md mx-1 p-3">
+            </ul>
+            <ul class="flex mt-1">
+               <li data-name="fill" data-value="#BBF7D0" title="fill #BBF7D0"
+                  class="border bg-green-200 border-green-200 hover:shadow-md hover:shadow-green-200 rounded-md mx-1 p-3">
+               <li data-name="fill" data-value="#BFDBFE" title="fill #BFDBFE"
+                  class="border bg-blue-200 border-blue-200 hover:shadow-md hover:shadow-blue-200 rounded-md mx-1 p-3">
+               <li data-name="fill" data-value="#E9D5FF" title="fill #E9D5FF"
+                  class="border bg-purple-200 border-purple-200 hover:shadow-md hover:shadow-purple-200 rounded-md mx-1 p-3">
+               <li data-name="fill" data-value="rgba(0, 0, 0, 0)" title="fill transparent"
+                  class="border border-dashed border-gray-400 hover:shadow-md hover:shadow-gray-400 rounded-md mx-1 p-3">
+            </ul>
+         </div>
       </div>
    </div>
 
