@@ -37,6 +37,16 @@ canvas.on("mouse:up", (event) => {
    if (event.button === 3) showContextMenu([pageX, pageY]);
 });
 
+//color picker
+const colorPicker = document.getElementById("colorPicker");
+colorPicker.addEventListener("click", (event) => {
+   if (event.target.tagName === "LI") {
+      const colorType = event.target.dataset.name;
+      const colorValue = event.target.dataset.value;
+      changeObjectColor(canvas, colorType, colorValue);
+   }
+});
+
 // hide context menu on click event buttons
 document.addEventListener("click", (event) => {
    if (!colorPicker.contains(event.target)) {
@@ -145,14 +155,3 @@ contextMenuSendBackwardBtn.addEventListener("click", () => {
 contextMenuSendToBackBtn.addEventListener("click", () => {
    adjustObjectLayer(canvas, "sendToBack");
 });
-
-//color picker
-const colorPicker = document.getElementById("colorPicker");
-colorPicker.addEventListener("click", (event) => {
-   if (event.target.tagName === "LI") {
-      const colorType = event.target.dataset.name;
-      const colorValue = event.target.dataset.value;
-      changeObjectColor(canvas, colorType, colorValue);
-   }
-});
-
