@@ -34,7 +34,7 @@ canvas.on("mouse:up", (event) => {
    document.getElementById("canvasX").textContent = canvasX;
    document.getElementById("canvasY").textContent = canvasY;
 
-   if (event.button === 3) showContextMenu([pageX, pageY]);
+   if (event.button === 3) showContextMenu(canvas, [pageX, pageY]);
 });
 
 //color picker
