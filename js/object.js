@@ -110,10 +110,15 @@ export function importImage(canvas) {
       const url = URL.createObjectURL(file);
 
       if (fileType === "image/png" || fileType === "image/jpeg") {
-         fabric.Image.fromURL(url, (img) => {
-            img.set({ left: 10, top: 10 });
-            canvas.add(img);
-         });
+         const reader = new FileReader();
+         reader.onload = function(event) {
+            const imageURL = event.target.result;
+            fabric.Image.fromURL(imageURL, (img) => {
+               img.set({ left: 10, top: 10 });
+               canvas.add(img);
+            });
+         }
+         reader.readAsDataURL(file);
       }
       else if (fileType === "image/svg+xml") {
          fabric.loadSVGFromURL(url, (objects, options) => {
