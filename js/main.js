@@ -1,10 +1,5 @@
 import { initializeCanvas } from "./canvas.js"
 import {
-   generateRectangle,
-   generateCircle,
-   generateLine,
-   generateTextBox,
-   importImage,
    deleteObject,
    copyObjects,
    pasteObjects,
@@ -88,19 +83,24 @@ const saveBtn = document.getElementById("saveCanvas");
 const exportJpegBtn = document.getElementById("exportJPEG");
 const exportPngBtn = document.getElementById("exportPNG");
 
-rectangleBtn.addEventListener("click", () => {
+rectangleBtn.addEventListener("click", async () => {
+   const { generateRectangle } = await import("./object.js");
    generateRectangle(canvas);
 });
-circleBtn.addEventListener("click", () => {
+circleBtn.addEventListener("click", async () => {
+   const { generateCircle } = await import("./object.js");
    generateCircle(canvas);
 });
-lineBtn.addEventListener("click", () => {
+lineBtn.addEventListener("click", async () => {
+   const { generateLine } = await import("./object.js");
    generateLine(canvas);
 });
-textBoxBtn.addEventListener("click", () => {
+textBoxBtn.addEventListener("click", async () => {
+   const { generateTextBox } = await import("./object.js");
    generateTextBox(canvas);
 });
-importImageBtn.addEventListener("click", () => {
+importImageBtn.addEventListener("click", async () => {
+   const { importImage } = await import("./object.js");
    importImage(canvas);
 });
 deleteObjectBtn.addEventListener("click", () => {
