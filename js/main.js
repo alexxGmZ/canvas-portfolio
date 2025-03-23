@@ -1,9 +1,4 @@
-import {
-   initializeCanvas,
-   saveCanvasToJson,
-   canvasToJpeg,
-   canvasToPng,
-} from "./canvas.js"
+import { initializeCanvas } from "./canvas.js"
 import {
    generateRectangle,
    generateCircle,
@@ -112,13 +107,16 @@ importImageBtn.addEventListener("click", () => {
 deleteObjectBtn.addEventListener("click", () => {
    deleteObject(canvas);
 });
-saveBtn.addEventListener("click", () => {
+saveBtn.addEventListener("click", async () => {
+   const { saveCanvasToJson } = await import("./canvas-export.js");
    saveCanvasToJson(canvas);
 });
-exportJpegBtn.addEventListener("click", () => {
+exportJpegBtn.addEventListener("click", async () => {
+   const { canvasToJpeg } = await import("./canvas-export.js");
    canvasToJpeg(canvas);
 });
-exportPngBtn.addEventListener("click", () => {
+exportPngBtn.addEventListener("click", async () => {
+   const { canvasToPng } = await import("./canvas-export.js");
    canvasToPng(canvas);
 });
 
