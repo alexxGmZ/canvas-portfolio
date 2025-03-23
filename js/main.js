@@ -8,8 +8,8 @@ import {
 } from "./object.js"
 import { showContextMenu, hideContextMenu } from "./context-menu.js"
 
-var pageX = 0;
-var pageY = 0;
+let pageX = 0;
+let pageY = 0;
 document.addEventListener("mousedown", (event) => {
    pageX = event.pageX;
    pageY = event.pageY;
