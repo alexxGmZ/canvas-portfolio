@@ -16,7 +16,6 @@ import {
    adjustObjectLayer,
    changeObjectColor,
 } from "./object.js"
-import { showContextMenu, hideContextMenu } from "./context-menu.js"
 
 let pageX = 0;
 let pageY = 0;
@@ -26,10 +25,11 @@ document.addEventListener("mousedown", (event) => {
 });
 
 const canvas = initializeCanvas();
-canvas.on("mouse:up", (event) => {
+canvas.on("mouse:up", async (event) => {
    const pointer = canvas.getPointer(event.e);
    const canvasX = parseFloat(pointer.x.toFixed(3));
    const canvasY = parseFloat(pointer.y.toFixed(3));
+   const { showContextMenu } = await import("./context-menu.js");
 
    document.getElementById("canvasX").textContent = canvasX;
    document.getElementById("canvasY").textContent = canvasY;
@@ -48,7 +48,8 @@ colorPicker.addEventListener("click", (event) => {
 });
 
 // hide context menu on click event buttons
-document.addEventListener("click", (event) => {
+document.addEventListener("click", async (event) => {
+   const { hideContextMenu } = await import("./context-menu.js");
    if (!colorPicker.contains(event.target)) {
       hideContextMenu();
    }
