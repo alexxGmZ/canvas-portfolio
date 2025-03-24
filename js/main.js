@@ -50,7 +50,7 @@ document.addEventListener("click", async (event) => {
    }
 });
 
-document.addEventListener("keydown", function(event) {
+document.addEventListener("keydown", async (event) => {
    if (event.ctrlKey) {
       // ctrl + c
       if (event.key.toLowerCase() === "c") {
@@ -67,6 +67,7 @@ document.addEventListener("keydown", function(event) {
       // ctrl + s
       if (event.key.toLowerCase() === "s") {
          event.preventDefault();
+         const { saveCanvasToJson } = await import("./canvas-export.js");
          saveCanvasToJson(canvas);
       }
    }
