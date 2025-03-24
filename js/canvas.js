@@ -11,7 +11,7 @@ export function initializeCanvas() {
       fireRightClick: true,
       preserveObjectStacking: true,
       width: 720,
-      height: 1200
+      height: 1500
    });
 
    if (!portfolioJson.background)
