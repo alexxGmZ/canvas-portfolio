@@ -1,4 +1,4 @@
-import { initializeCanvas } from "./canvas.js"
+import { initializeCanvas, resizeCanvas } from "./canvas.js"
 import {
    generateRectangle,
    generateCircle,
@@ -20,6 +20,15 @@ document.addEventListener("mousedown", (event) => {
 });
 
 const canvas = initializeCanvas();
+
+// responsive canvas size
+let canvasWidth = canvas.getWidth();
+let canvasHeight = canvas.getHeight();
+resizeCanvas(canvas, window.innerWidth, canvasWidth, canvasHeight);
+window.onresize = function() {
+   resizeCanvas(canvas, this.innerWidth, canvasWidth, canvasHeight);
+};
+
 canvas.on("mouse:up", async (event) => {
    const pointer = canvas.getPointer(event.e);
    const canvasX = parseFloat(pointer.x.toFixed(3));
