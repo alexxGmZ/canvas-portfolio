@@ -123,11 +123,41 @@ saveBtn.addEventListener("click", async () => {
 });
 exportJpegBtn.addEventListener("click", async () => {
    const { canvasToJpeg } = await import("./canvas-export.js");
+   const resizedCanvasWidth = canvas.getWidth();
+   const resizedCanvasHeight = canvas.getHeight();
+   const resizedCanvasZoom = canvas.getZoom();
+
+   // double canvas resolution when exporting
+   canvas.setWidth(canvasWidth * 2);
+   canvas.setHeight(canvasHeight * 2);
+   canvas.setZoom(2);
+
+   // export canvas to jpeg
    canvasToJpeg(canvas);
+
+   // resize back to the resized resolution
+   canvas.setWidth(resizedCanvasWidth);
+   canvas.setHeight(resizedCanvasHeight);
+   canvas.setZoom(resizedCanvasZoom);
 });
 exportPngBtn.addEventListener("click", async () => {
    const { canvasToPng } = await import("./canvas-export.js");
+   const resizedCanvasWidth = canvas.getWidth();
+   const resizedCanvasHeight = canvas.getHeight();
+   const resizedCanvasZoom = canvas.getZoom();
+
+   // double canvas resolution when exporting
+   canvas.setWidth(canvasWidth * 2);
+   canvas.setHeight(canvasHeight * 2);
+   canvas.setZoom(2);
+
+   // export canvas to png
    canvasToPng(canvas);
+
+   // resize back to the resized resolution
+   canvas.setWidth(resizedCanvasWidth);
+   canvas.setHeight(resizedCanvasHeight);
+   canvas.setZoom(resizedCanvasZoom);
 });
 
 //
