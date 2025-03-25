@@ -32,8 +32,8 @@ export function initializeCanvas() {
  */
 let scale = 1;
 export function resizeCanvas(canvas, windowWidth, canvasWidth, canvasHeight) {
-   // canvas width with a 40px leeway, to have margin when resized
-   const canvasWidthWithLeeway = canvasWidth + 40;
+   // canvas width with a 80px leeway, to have margin when resized
+   const canvasWidthWithLeeway = canvasWidth + 80;
 
    if (windowWidth >= canvasWidthWithLeeway) {
       scale = 1;
