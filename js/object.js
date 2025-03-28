@@ -11,8 +11,8 @@ export function generateRectangle(canvas) {
    if (!canvas) return;
    console.log(`generateRectangle()`);
    const rect = new fabric.Rect({
-      left: 100,
-      top: 100,
+      left: canvas.getWidth() / 2,
+      top: window.scrollY,
       width: 50,
       height: 50,
       fill: "rgba(255, 255, 255, 0)",
@@ -36,8 +36,8 @@ export function generateCircle(canvas) {
    console.log(`generateCircle()`);
    const circle = new fabric.Circle({
       radius: 20,
-      left: 100,
-      top: 100,
+      left: canvas.getWidth() / 2,
+      top: window.scrollY,
       fill: "rgba(255, 255, 255, 0)",
       stroke: "#0C0A09",
       strokeWidth: 2,
@@ -58,6 +58,8 @@ export function generateLine(canvas) {
    if (!canvas) return;
    console.log(`generateLine()`);
    const line = new fabric.Line([10, 50, 100, 50], {
+      left: canvas.getWidth() / 2,
+      top: window.scrollY,
       stroke: "#0C0A09",        // Line color
       strokeWidth: 2,       // Line width
    });
@@ -76,8 +78,8 @@ export function generateTextBox(canvas) {
    if (!canvas) return;
    console.log(`generateText()`);
    const text = new fabric.IText("text", {
-      left: 100,
-      top: 100,
+      left: canvas.getWidth() / 2,
+      top: window.scrollY,
       fontSize: 30
    });
 
