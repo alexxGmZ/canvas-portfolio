@@ -90465,7 +90465,7 @@
       "fontFamily": "Times New Roman",
       "fontWeight": "normal",
       "fontSize": 30,
-      "text": "A Markdown-to-Pdf convert built as a Neovim plugin.",
+      "text": "A Markdown-to-Pdf converter built as a Neovim plugin.",
       "underline": false,
       "overline": false,
       "linethrough": false,
