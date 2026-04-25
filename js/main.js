@@ -1,3 +1,4 @@
+import { util } from "fabric"
 import { initializeCanvas, resizeCanvas } from "./canvas.js"
 import {
    generateRectangle,
@@ -14,9 +15,11 @@ import {
 
 let pageX = 0;
 let pageY = 0;
+let mouseButton;
 document.addEventListener("mousedown", (event) => {
    pageX = event.pageX;
    pageY = event.pageY;
+   mouseButton = event.button;
 });
 
 const canvas = initializeCanvas();
@@ -29,7 +32,7 @@ window.onresize = function() {
 };
 
 canvas.on("mouse:up", async (event) => {
-   const pointer = canvas.getPointer(event.e);
+   const pointer = util.getPointer(event.e);
    const canvasX = parseFloat(pointer.x.toFixed(3));
    const canvasY = parseFloat(pointer.y.toFixed(3));
    const { showContextMenu } = await import("./context-menu.js");
@@ -37,7 +40,7 @@ canvas.on("mouse:up", async (event) => {
    document.getElementById("canvasX").textContent = canvasX;
    document.getElementById("canvasY").textContent = canvasY;
 
-   if (event.button === 3) showContextMenu(canvas, [pageX, pageY]);
+   if (mouseButton === 2) showContextMenu(canvas, [pageX, pageY]);
 });
 
 //color picker
