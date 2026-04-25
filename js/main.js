@@ -24,7 +24,6 @@ const canvas = initializeCanvas();
 // responsive canvas size
 let canvasWidth = canvas.getWidth();
 let canvasHeight = canvas.getHeight();
-resizeCanvas(canvas, window.innerWidth, canvasWidth, canvasHeight);
 window.onresize = function() {
    resizeCanvas(canvas, this.innerWidth, canvasWidth, canvasHeight);
 };
