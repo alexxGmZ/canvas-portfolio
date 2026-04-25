@@ -77,7 +77,7 @@ export function generateLine(canvas) {
 export function generateTextBox(canvas) {
    if (!canvas) return;
    console.log(`generateText()`);
-   const text = new fabric.IText("text", {
+   const text = new IText("text", {
       left: canvas.getWidth() / 2,
       top: window.scrollY,
       fontSize: 30
