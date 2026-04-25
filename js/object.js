@@ -1,4 +1,4 @@
-import { fabric } from "fabric"
+import { Rect, Circle, Line, IText } from "fabric"
 let _clipboard;
 
 /**
@@ -10,7 +10,7 @@ let _clipboard;
 export function generateRectangle(canvas) {
    if (!canvas) return;
    console.log(`generateRectangle()`);
-   const rect = new fabric.Rect({
+   const rect = new Rect({
       left: canvas.getWidth() / 2,
       top: window.scrollY,
       width: 50,
@@ -34,7 +34,7 @@ export function generateRectangle(canvas) {
 export function generateCircle(canvas) {
    if (!canvas) return;
    console.log(`generateCircle()`);
-   const circle = new fabric.Circle({
+   const circle = new Circle({
       radius: 20,
       left: canvas.getWidth() / 2,
       top: window.scrollY,
@@ -57,7 +57,7 @@ export function generateCircle(canvas) {
 export function generateLine(canvas) {
    if (!canvas) return;
    console.log(`generateLine()`);
-   const line = new fabric.Line([10, 50, 100, 50], {
+   const line = new Line([10, 50, 100, 50], {
       left: canvas.getWidth() / 2,
       top: window.scrollY,
       stroke: "#0C0A09",        // Line color
