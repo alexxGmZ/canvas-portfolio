@@ -34,18 +34,22 @@ let scale = 1;
 export function resizeCanvas(canvas, windowWidth, canvasWidth, canvasHeight) {
    // canvas width with a 80px leeway, to have margin when resized
    const canvasWidthWithLeeway = canvasWidth + 80;
+   let width = 0;
+   let height = 0;
 
    if (windowWidth >= canvasWidthWithLeeway) {
       scale = 1;
       canvas.setZoom(1);
-      canvas.setWidth(canvasWidth * 1);
-      canvas.setHeight(canvasHeight * 1);
+      width = canvasWidth * 1;
+      height = canvasHeight * 1;
+      canvas.setDimensions({width, height});
       return;
    }
    console.log(`resizeCanvas(${windowWidth}, ${canvasWidth}, ${canvasHeight})`);
 
    scale = windowWidth / canvasWidthWithLeeway;
    canvas.setZoom(scale);
-   canvas.setWidth(canvasWidth * scale);
-   canvas.setHeight(canvasHeight * scale);
+   width = canvasWidth * scale;
+   height = canvasHeight * scale;
+   canvas.setDimensions({width, height});
 }
