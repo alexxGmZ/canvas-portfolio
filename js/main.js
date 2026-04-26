@@ -1,4 +1,3 @@
-import { util } from "fabric"
 import { initializeCanvas, resizeCanvas } from "./canvas.js"
 import {
    generateRectangle,
@@ -31,14 +30,13 @@ window.onresize = function() {
    resizeCanvas(canvas, this.innerWidth, canvasWidth, canvasHeight);
 };
 
+let canvasX = 0;
+let canvasY = 0;
 canvas.on("mouse:up", async (event) => {
-   const pointer = util.getPointer(event.e);
-   const canvasX = parseFloat(pointer.x.toFixed(3));
-   const canvasY = parseFloat(pointer.y.toFixed(3));
+   const pointer = event.scenePoint;
+   canvasX = parseFloat(pointer.x.toFixed(3));
+   canvasY = parseFloat(pointer.y.toFixed(3));
    const { showContextMenu } = await import("./context-menu.js");
-
-   document.getElementById("canvasX").textContent = canvasX;
-   document.getElementById("canvasY").textContent = canvasY;
 
    if (mouseButton === 2) showContextMenu(canvas, [pageX, pageY]);
 });
@@ -177,8 +175,6 @@ contextMenuCopyBtn.addEventListener("click", () => {
    copyObjects(canvas);
 });
 contextMenuPasteBtn.addEventListener("click", () => {
-   const canvasX = document.getElementById("canvasX").textContent;
-   const canvasY = document.getElementById("canvasY").textContent;
    pasteObjects(canvas, [canvasX, canvasY]);
 });
 contextMenuDeleteBtn.addEventListener("click", () => {
