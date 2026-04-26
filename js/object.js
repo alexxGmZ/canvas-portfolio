@@ -1,4 +1,4 @@
-import { Rect, Circle, Line, IText } from "fabric"
+import { Rect, Circle, Line, IText, ActiveSelection } from "fabric"
 let _clipboard;
 
 /**
@@ -167,7 +167,7 @@ export function deleteObject(canvas) {
 export function copyObjects(canvas) {
    if (!canvas) return;
    console.log("copyObjects()");
-   canvas.getActiveObject().clone((cloned) => {
+   canvas.getActiveObject().clone().then((cloned) => {
       _clipboard = cloned;
    });
 }
@@ -179,44 +179,41 @@ export function copyObjects(canvas) {
  * objects will be pasted.
  * @param {Array<number>} pointerCoords - x, y pointer coordinates.
  */
-export function pasteObjects(canvas, pointerCoords) {
+export async function pasteObjects(canvas, pointerCoords) {
    if (!canvas || !_clipboard) return;
    console.log(`pasteObjects(${pointerCoords})`);
 
-   _clipboard.clone(function(clonedObj) {
-      canvas.discardActiveObject();
+   const clonedObj = await _clipboard.clone();
+   canvas.discardActiveObject();
 
-      if (pointerCoords) {
-         clonedObj.set({
-            left: parseInt(pointerCoords[0]),
-            top: parseInt(pointerCoords[1]),
-            evented: true,
-         });
-      }
-      else {
-         clonedObj.set({
-            left: clonedObj.left + 10,
-            top: clonedObj.top + 10,
-            evented: true,
-         });
-      }
+   if (pointerCoords) {
+      clonedObj.set({
+         left: parseInt(pointerCoords[0]),
+         top: parseInt(pointerCoords[1]),
+         evented: true,
+      });
+   } else {
+      clonedObj.set({
+         left: clonedObj.left + 10,
+         top: clonedObj.top + 10,
+         evented: true,
+      });
+   }
 
-      if (clonedObj.type === "activeSelection") {
-         // active selection needs a reference to the canvas.
-         clonedObj.canvas = canvas;
-         clonedObj.forEachObject((obj) => {
-            return canvas.add(obj);
-         });
-         // this should solve the unselectability
-         clonedObj.setCoords();
-      }
-      else canvas.add(clonedObj);
+   if (clonedObj instanceof ActiveSelection) {
+      clonedObj.canvas = canvas;
+      clonedObj.forEachObject((obj) => {
+         canvas.add(obj);
+      });
+      clonedObj.setCoords();
+   } else {
+      canvas.add(clonedObj);
+   }
 
-      _clipboard.top += 10;
-      _clipboard.left += 10;
-      canvas.setActiveObject(clonedObj);
-      canvas.requestRenderAll();
-   });
+   _clipboard.top += 10;
+   _clipboard.left += 10;
+   canvas.setActiveObject(clonedObj);
+   canvas.requestRenderAll();
 }
 
 /**
