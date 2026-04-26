@@ -128,16 +128,20 @@ exportJpegBtn.addEventListener("click", async () => {
    const resizedCanvasZoom = canvas.getZoom();
 
    // double canvas resolution when exporting
-   canvas.setWidth(canvasWidth * 2);
-   canvas.setHeight(canvasHeight * 2);
+   canvas.setDimensions({
+      width: canvasWidth * 2,
+      height: canvasHeight * 2,
+   });
    canvas.setZoom(2);
 
    // export canvas to jpeg
    canvasToJpeg(canvas);
 
    // resize back to the resized resolution
-   canvas.setWidth(resizedCanvasWidth);
-   canvas.setHeight(resizedCanvasHeight);
+   canvas.setDimensions({
+      width: resizedCanvasWidth,
+      height: resizedCanvasHeight,
+   });
    canvas.setZoom(resizedCanvasZoom);
 });
 exportPngBtn.addEventListener("click", async () => {
@@ -147,16 +151,20 @@ exportPngBtn.addEventListener("click", async () => {
    const resizedCanvasZoom = canvas.getZoom();
 
    // double canvas resolution when exporting
-   canvas.setWidth(canvasWidth * 2);
-   canvas.setHeight(canvasHeight * 2);
+   canvas.setDimensions({
+      width: canvasWidth * 2,
+      height: canvasHeight * 2,
+   });
    canvas.setZoom(2);
 
    // export canvas to png
    canvasToPng(canvas);
 
    // resize back to the resized resolution
-   canvas.setWidth(resizedCanvasWidth);
-   canvas.setHeight(resizedCanvasHeight);
+   canvas.setDimensions({
+      width: resizedCanvasWidth,
+      height: resizedCanvasHeight,
+   });
    canvas.setZoom(resizedCanvasZoom);
 });
 
