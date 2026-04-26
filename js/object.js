@@ -1,4 +1,13 @@
-import { Rect, Circle, Line, IText, ActiveSelection } from "fabric"
+import {
+   Rect,
+   Circle,
+   Line,
+   IText,
+   ActiveSelection,
+   FabricImage,
+   util,
+   loadSVGFromURL,
+} from "fabric"
 let _clipboard;
 
 /**
@@ -104,7 +113,7 @@ export function importImage(canvas) {
    if (importImageEventListener)
       inputElement.removeEventListener("change", importImageEventListener);
 
-   importImageEventListener = function(event) {
+   importImageEventListener = async function(event) {
       console.log("importImage().uploadImageEventListener()");
 
       const file = event.target.files[0];
@@ -113,22 +122,24 @@ export function importImage(canvas) {
 
       if (fileType === "image/png" || fileType === "image/jpeg") {
          const reader = new FileReader();
-         reader.onload = function(event) {
+         reader.onload = async function(event) {
             const imageURL = event.target.result;
-            fabric.Image.fromURL(imageURL, (img) => {
-               img.set({ left: 10, top: 10 });
-               canvas.add(img);
+            const img = await FabricImage.fromURL(imageURL);
+
+            img.set({
+               left: 10,
+               top: 10,
+               originX: "left",
+               originY: "top",
             });
+            canvas.add(img);
          }
          reader.readAsDataURL(file);
       }
       else if (fileType === "image/svg+xml") {
-         fabric.loadSVGFromURL(url, (objects, options) => {
-            const svg = fabric.util.groupSVGElements(objects, options);
-            svg.scaleToWidth(180);
-            svg.scaleToHeight(180);
-            canvas.add(svg);
-         });
+         const { objects, options } = await loadSVGFromURL(url);
+         const svg = util.groupSVGElements(objects, options);
+         canvas.add(svg);
       }
    }
 
