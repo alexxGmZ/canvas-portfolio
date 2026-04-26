@@ -17,8 +17,7 @@ export function initializeCanvas() {
    if (!portfolioJson.background)
       canvas.set("backgroundColor", "rgb(255, 255, 255)")
 
-   canvas.loadFromJSON(portfolioJson)
-   canvas.requestRenderAll();
+   canvas.loadFromJSON(portfolioJson).then((canvas) => canvas.requestRenderAll());
    return canvas;
 }
 
